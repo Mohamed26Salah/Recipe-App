@@ -7,6 +7,8 @@
 		<string>Nunito-VariableFont_wght.ttf</string>
 		<string>Poppins-Light.ttf</string>
 		<string>Poppins-Medium.ttf</string>
+		<string>Poppins-SemiBoldItalic.ttf</string>
+		<string>Poppins-SemiBold.ttf</string>
 	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>

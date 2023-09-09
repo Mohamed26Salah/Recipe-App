@@ -29,6 +29,7 @@ struct K {
         static let splashScreenImageBlurred = "splashScreenImageBlurred"
         static let savedImage = "Saved"
         static let UnsavedImage = "UnSaved"
+        static let leftArrow = "left-arrow2"
     }
     struct UserDefaults {
         static let hasSeenOnboarding = "hasSeenOnboarding"

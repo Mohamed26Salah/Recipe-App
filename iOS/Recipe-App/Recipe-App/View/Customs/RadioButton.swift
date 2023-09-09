@@ -31,6 +31,7 @@ class RadioButton: UIButton {
         self.backgroundColor = .clear
         self.tintColor = .clear
         self.setTitle("", for: .normal)
+        self.imageView?.contentMode = .scaleAspectFill // Add this line
         updateButtonAppearance()
         self.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
     }

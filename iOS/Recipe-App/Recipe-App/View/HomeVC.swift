@@ -25,8 +25,14 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: K.cellsResuable.FoodTVC, for: indexPath) as! FoodTVC
-        
+        cell.selectionStyle = .none
         return cell
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let foodDetails = FoodDetailsVC()
+        foodDetails.hidesBottomBarWhenPushed = true
+        navigationController?.pushViewController(foodDetails, animated: true)
+//        self.foodTableView.deselectRow(at: self.foodTableView.indexPathForSelectedRow!, animated: true)
     }
 
 }

@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FoodDetailsVC" customModule="Recipe_App" customModuleProvider="target">
+            <connections>
+                <outlet property="recipeGradientView" destination="de7-Ha-cDM" id="Z6R-xQ-9W1"/>
+                <outlet property="recipeImage" destination="9Aq-uc-WN0" id="z6h-Q4-kAJ"/>
+                <outlet property="recipeNameLabel" destination="xru-11-nbu" id="f5Z-VM-ey6"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="watchTheVideoButton" destination="rRo-f2-qnS" id="glH-9o-8Xv"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xVl-SV-Th6">
+                    <rect key="frame" x="0.0" y="103" width="393" height="715"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h4e-u3-qFI">
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="715"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="eggsImage" translatesAutoresizingMaskIntoConstraints="NO" id="9Aq-uc-WN0">
+                                    <rect key="frame" x="30" y="49" width="333" height="269"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="269" id="0YN-LT-5S1"/>
+                                    </constraints>
+                                </imageView>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="de7-Ha-cDM">
+                                    <rect key="frame" x="30" y="49" width="333" height="269"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mohamed Salah is the Best Player" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xru-11-nbu">
+                                            <rect key="frame" x="50" y="50" width="233" height="100"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="100" id="3WB-0L-iJs"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="29"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rRo-f2-qnS">
+                                            <rect key="frame" x="80" y="179" width="173" height="46"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="173" id="RhI-lF-9Vg"/>
+                                            </constraints>
+                                            <state key="normal" title="Button"/>
+                                            <buttonConfiguration key="configuration" style="filled" title="  Watch The Video">
+                                                <imageReference key="image" image="play.fill" catalog="system" symbolScale="small"/>
+                                                <fontDescription key="titleFontDescription" name="Poppins-Medium" family="Poppins" pointSize="15"/>
+                                                <color key="baseForegroundColor" systemColor="systemRedColor"/>
+                                                <color key="baseBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </buttonConfiguration>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                    <integer key="value" value="15"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <action selector="watchTheVideoButtonTapped:" destination="-1" eventType="touchUpInside" id="41w-zp-IEY"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstItem="xru-11-nbu" firstAttribute="top" secondItem="de7-Ha-cDM" secondAttribute="top" constant="50" id="4xO-Sv-D6G"/>
+                                        <constraint firstAttribute="bottom" secondItem="rRo-f2-qnS" secondAttribute="bottom" constant="44" id="Fis-fz-SJU"/>
+                                        <constraint firstItem="xru-11-nbu" firstAttribute="leading" secondItem="de7-Ha-cDM" secondAttribute="leading" constant="50" id="LC8-Sw-Gw7"/>
+                                        <constraint firstAttribute="trailing" secondItem="rRo-f2-qnS" secondAttribute="trailing" constant="80" id="LcF-pF-LPt"/>
+                                        <constraint firstAttribute="height" constant="269" id="M6F-Ph-PT1"/>
+                                        <constraint firstAttribute="trailing" secondItem="xru-11-nbu" secondAttribute="trailing" constant="50" id="YDF-1U-PY2"/>
+                                        <constraint firstItem="rRo-f2-qnS" firstAttribute="leading" secondItem="de7-Ha-cDM" secondAttribute="leading" constant="80" id="ZEt-Fz-gpU"/>
+                                        <constraint firstItem="rRo-f2-qnS" firstAttribute="top" secondItem="xru-11-nbu" secondAttribute="bottom" constant="29" id="iOu-Hu-ScO"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstItem="de7-Ha-cDM" firstAttribute="top" secondItem="h4e-u3-qFI" secondAttribute="top" constant="49" id="3b3-Pb-ZiY"/>
+                                <constraint firstAttribute="trailing" secondItem="de7-Ha-cDM" secondAttribute="trailing" constant="30" id="Qzz-ON-WwH"/>
+                                <constraint firstItem="9Aq-uc-WN0" firstAttribute="top" secondItem="h4e-u3-qFI" secondAttribute="top" constant="49" id="SPc-JI-pCz"/>
+                                <constraint firstItem="de7-Ha-cDM" firstAttribute="leading" secondItem="h4e-u3-qFI" secondAttribute="leading" constant="30" id="VF3-n7-A3v"/>
+                                <constraint firstItem="9Aq-uc-WN0" firstAttribute="leading" secondItem="h4e-u3-qFI" secondAttribute="leading" constant="30" id="WDS-y0-dse"/>
+                                <constraint firstAttribute="trailing" secondItem="9Aq-uc-WN0" secondAttribute="trailing" constant="30" id="s7g-H4-Agx"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="h4e-u3-qFI" firstAttribute="width" secondItem="xVl-SV-Th6" secondAttribute="width" id="KPq-L3-Ha5"/>
+                        <constraint firstItem="h4e-u3-qFI" firstAttribute="leading" secondItem="xVl-SV-Th6" secondAttribute="leading" id="QS0-DS-Kkm"/>
+                        <constraint firstItem="h4e-u3-qFI" firstAttribute="top" secondItem="xVl-SV-Th6" secondAttribute="top" id="adD-pM-15x"/>
+                        <constraint firstAttribute="trailing" secondItem="h4e-u3-qFI" secondAttribute="trailing" id="oeQ-YN-PNb"/>
+                        <constraint firstAttribute="bottom" secondItem="h4e-u3-qFI" secondAttribute="bottom" id="rlr-7k-Pak"/>
+                        <constraint firstItem="h4e-u3-qFI" firstAttribute="height" secondItem="xVl-SV-Th6" secondAttribute="height" priority="250" id="ywg-bh-FMb"/>
+                    </constraints>
+                    <viewLayoutGuide key="contentLayoutGuide" id="jU5-Re-Cg0"/>
+                    <viewLayoutGuide key="frameLayoutGuide" id="Hb5-wk-tDQ"/>
+                </scrollView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="xVl-SV-Th6" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="0VQ-wf-yp2"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="xVl-SV-Th6" secondAttribute="trailing" id="Xzu-FH-MCD"/>
+                <constraint firstItem="xVl-SV-Th6" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="p6B-Pj-Iem"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="xVl-SV-Th6" secondAttribute="bottom" id="xn8-PU-3Nj"/>
+            </constraints>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <point key="canvasLocation" x="69.465648854961827" y="23.943661971830988"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="eggsImage" width="1180" height="1180"/>
+        <image name="play.fill" catalog="system" width="117" height="128"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
