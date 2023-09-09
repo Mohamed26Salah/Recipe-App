@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		ABDEA5C22AAC73DB000C957A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABDEA5C12AAC73DB000C957A /* AppDelegate.swift */; };
-		ABDEA5C62AAC73DB000C957A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABDEA5C52AAC73DB000C957A /* ViewController.swift */; };
 		ABDEA5C92AAC73DB000C957A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABDEA5C72AAC73DB000C957A /* Main.storyboard */; };
 		ABDEA5CB2AAC73DC000C957A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABDEA5CA2AAC73DC000C957A /* Assets.xcassets */; };
 		ABDEA5CE2AAC73DC000C957A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABDEA5CC2AAC73DC000C957A /* LaunchScreen.storyboard */; };
@@ -22,6 +21,13 @@
 		ABDEA6022AAC8BDD000C957A /* SplashVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABDEA6002AAC8BDD000C957A /* SplashVC.xib */; };
 		ABDEA6052AAC8CA8000C957A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABDEA6042AAC8CA8000C957A /* Constants.swift */; };
 		ABDEA6092AACA3B8000C957A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABDEA6082AACA3B8000C957A /* SceneDelegate.swift */; };
+		ABDEA60F2AACAF82000C957A /* UITabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABDEA60E2AACAF82000C957A /* UITabBarVC.swift */; };
+		ABDEA6152AACB3B3000C957A /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABDEA6142AACB3B3000C957A /* HomeVC.swift */; };
+		ABDEA6172AACB3CD000C957A /* FavouritesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABDEA6162AACB3CD000C957A /* FavouritesVC.swift */; };
+		ABDEA6192AACB441000C957A /* BasicVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABDEA6182AACB441000C957A /* BasicVC.swift */; };
+		ABDEA61D2AACBE52000C957A /* FoodTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABDEA61B2AACBE52000C957A /* FoodTVC.swift */; };
+		ABDEA61E2AACBE52000C957A /* FoodTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABDEA61C2AACBE52000C957A /* FoodTVC.xib */; };
+		ABDEA6222AACCBC7000C957A /* RadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABDEA6212AACCBC7000C957A /* RadioButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,7 +50,6 @@
 /* Begin PBXFileReference section */
 		ABDEA5BE2AAC73DB000C957A /* Recipe-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Recipe-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABDEA5C12AAC73DB000C957A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		ABDEA5C52AAC73DB000C957A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		ABDEA5C82AAC73DB000C957A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ABDEA5CA2AAC73DC000C957A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ABDEA5CD2AAC73DC000C957A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -62,6 +67,14 @@
 		ABDEA6062AAC94AB000C957A /* Nunito-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-VariableFont_wght.ttf"; sourceTree = "<group>"; };
 		ABDEA6072AAC968B000C957A /* Poppins-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Light.ttf"; sourceTree = "<group>"; };
 		ABDEA6082AACA3B8000C957A /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		ABDEA60E2AACAF82000C957A /* UITabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITabBarVC.swift; sourceTree = "<group>"; };
+		ABDEA6142AACB3B3000C957A /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		ABDEA6162AACB3CD000C957A /* FavouritesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesVC.swift; sourceTree = "<group>"; };
+		ABDEA6182AACB441000C957A /* BasicVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicVC.swift; sourceTree = "<group>"; };
+		ABDEA61B2AACBE52000C957A /* FoodTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodTVC.swift; sourceTree = "<group>"; };
+		ABDEA61C2AACBE52000C957A /* FoodTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FoodTVC.xib; sourceTree = "<group>"; };
+		ABDEA61F2AACC1AE000C957A /* Poppins-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.ttf"; sourceTree = "<group>"; };
+		ABDEA6212AACCBC7000C957A /* RadioButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,10 +159,15 @@
 		ABDEA5F12AAC740C000C957A /* View */ = {
 			isa = PBXGroup;
 			children = (
-				ABDEA5C52AAC73DB000C957A /* ViewController.swift */,
+				ABDEA60E2AACAF82000C957A /* UITabBarVC.swift */,
+				ABDEA6182AACB441000C957A /* BasicVC.swift */,
+				ABDEA6142AACB3B3000C957A /* HomeVC.swift */,
+				ABDEA6162AACB3CD000C957A /* FavouritesVC.swift */,
 				ABDEA5C72AAC73DB000C957A /* Main.storyboard */,
 				ABDEA5CC2AAC73DC000C957A /* LaunchScreen.storyboard */,
+				ABDEA61A2AACBE24000C957A /* FoodCell */,
 				ABDEA5FE2AAC8BC5000C957A /* SplashScreen */,
+				ABDEA6202AACCBB3000C957A /* Customs */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -198,10 +216,28 @@
 			isa = PBXGroup;
 			children = (
 				ABDEA6042AAC8CA8000C957A /* Constants.swift */,
+				ABDEA61F2AACC1AE000C957A /* Poppins-Medium.ttf */,
 				ABDEA6072AAC968B000C957A /* Poppins-Light.ttf */,
 				ABDEA6062AAC94AB000C957A /* Nunito-VariableFont_wght.ttf */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		ABDEA61A2AACBE24000C957A /* FoodCell */ = {
+			isa = PBXGroup;
+			children = (
+				ABDEA61B2AACBE52000C957A /* FoodTVC.swift */,
+				ABDEA61C2AACBE52000C957A /* FoodTVC.xib */,
+			);
+			path = FoodCell;
+			sourceTree = "<group>";
+		};
+		ABDEA6202AACCBB3000C957A /* Customs */ = {
+			isa = PBXGroup;
+			children = (
+				ABDEA6212AACCBC7000C957A /* RadioButton.swift */,
+			);
+			path = Customs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -318,6 +354,7 @@
 				ABDEA6022AAC8BDD000C957A /* SplashVC.xib in Resources */,
 				ABDEA5CB2AAC73DC000C957A /* Assets.xcassets in Resources */,
 				ABDEA5C92AAC73DB000C957A /* Main.storyboard in Resources */,
+				ABDEA61E2AACBE52000C957A /* FoodTVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,12 +380,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				ABDEA5F72AAC78DA000C957A /* APIManager.swift in Sources */,
+				ABDEA6152AACB3B3000C957A /* HomeVC.swift in Sources */,
 				ABDEA6092AACA3B8000C957A /* SceneDelegate.swift in Sources */,
-				ABDEA5C62AAC73DB000C957A /* ViewController.swift in Sources */,
+				ABDEA6222AACCBC7000C957A /* RadioButton.swift in Sources */,
+				ABDEA6192AACB441000C957A /* BasicVC.swift in Sources */,
 				ABDEA5C22AAC73DB000C957A /* AppDelegate.swift in Sources */,
 				ABDEA5FA2AAC7A15000C957A /* test2.swift in Sources */,
 				ABDEA6052AAC8CA8000C957A /* Constants.swift in Sources */,
+				ABDEA60F2AACAF82000C957A /* UITabBarVC.swift in Sources */,
 				ABDEA6012AAC8BDD000C957A /* SplashVC.swift in Sources */,
+				ABDEA61D2AACBE52000C957A /* FoodTVC.swift in Sources */,
+				ABDEA6172AACB3CD000C957A /* FavouritesVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

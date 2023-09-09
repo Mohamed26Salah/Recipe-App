@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
@@ -8,34 +8,168 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Tab BarVC-->
+        <scene sceneID="Lvx-14-v4r">
             <objects>
-                <viewController storyboardIdentifier="ViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="Recipe_App" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                <tabBarController storyboardIdentifier="UITabBarVC" id="5dv-sn-1mg" customClass="UITabBarVC" customModule="Recipe_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="eD1-B3-L8s">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" red="0.18039215689999999" green="0.67450980390000004" blue="0.66666666669999997" alpha="1" colorSpace="calibratedRGB"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="ahJ-Cn-sxx" kind="relationship" relationship="viewControllers" id="HXW-dU-2lD"/>
+                        <segue destination="yKj-HZ-k46" kind="relationship" relationship="viewControllers" id="V9t-cA-6gs"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EQc-gE-Wpb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1015" y="-418"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="4yv-Dk-A71">
+            <objects>
+                <navigationController id="ahJ-Cn-sxx" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Home" image="house" catalog="system" selectedImage="house.fill" id="lWz-Bn-nFC">
+                        <color key="badgeColor" red="0.1803921568627451" green="0.67450980392156867" blue="0.66666666666666663" alpha="1" colorSpace="calibratedRGB"/>
+                    </tabBarItem>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="IaY-4t-jFW">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="iCJ-WA-IOl" kind="relationship" relationship="rootViewController" id="3m9-Fl-7h8"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EBg-lb-WKM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="335" y="258"/>
+        </scene>
+        <!--HomeVC-->
+        <scene sceneID="9VU-Jc-Wzl">
+            <objects>
+                <viewController storyboardIdentifier="HomeVC" id="iCJ-WA-IOl" customClass="HomeVC" customModule="Recipe_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bOp-RD-QXl">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RRw-mG-Ulr">
-                                <rect key="frame" x="159" y="409" width="75" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="q5z-sF-zmO">
+                                <rect key="frame" x="16" y="234" width="361" height="535"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="I1U-Dk-8hb">
+                                <rect key="frame" x="0.0" y="103" width="393" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <action selector="goToSplashScreen:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5fr-XU-4jE"/>
+                                    <outlet property="delegate" destination="iCJ-WA-IOl" id="abY-mE-QaL"/>
                                 </connections>
-                            </button>
+                            </searchBar>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Lbe-xU-pDt">
+                                <rect key="frame" x="10" y="178" width="373" height="35"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qup-Kz-szJ">
+                                        <rect key="frame" x="0.0" y="0.0" width="114.33333333333333" height="35"/>
+                                        <color key="backgroundColor" red="0.92941176470588238" green="0.41568627450980389" blue="0.19607843137254902" alpha="0.84963541666666664" colorSpace="calibratedRGB"/>
+                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Under 15m"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <integer key="value" value="18"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ffi-zN-G7z">
+                                        <rect key="frame" x="129.33333333333334" y="0.0" width="114.33333333333334" height="35"/>
+                                        <color key="backgroundColor" red="0.92941176469999998" green="0.41568627450000001" blue="0.1960784314" alpha="0.84963541669999998" colorSpace="calibratedRGB"/>
+                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Under 30m"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <integer key="value" value="18"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="65X-we-fZQ">
+                                        <rect key="frame" x="258.66666666666669" y="0.0" width="114.33333333333331" height="35"/>
+                                        <color key="backgroundColor" red="0.92941176469999998" green="0.41568627450000001" blue="0.1960784314" alpha="0.84963541669999998" colorSpace="calibratedRGB"/>
+                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Under 1h"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <integer key="value" value="18"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="wUq-F4-Xx5"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <viewLayoutGuide key="safeArea" id="Est-WX-r2O"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Lbe-xU-pDt" firstAttribute="leading" secondItem="Est-WX-r2O" secondAttribute="leading" constant="10" id="4xO-eH-u5G"/>
+                            <constraint firstItem="Est-WX-r2O" firstAttribute="trailing" secondItem="Lbe-xU-pDt" secondAttribute="trailing" constant="10" id="9TG-go-RKt"/>
+                            <constraint firstItem="Lbe-xU-pDt" firstAttribute="top" secondItem="I1U-Dk-8hb" secondAttribute="bottom" constant="19" id="Icb-E8-euM"/>
+                            <constraint firstItem="I1U-Dk-8hb" firstAttribute="top" secondItem="Est-WX-r2O" secondAttribute="top" id="T8d-tf-hH4"/>
+                            <constraint firstItem="I1U-Dk-8hb" firstAttribute="trailing" secondItem="Est-WX-r2O" secondAttribute="trailing" id="TG7-EO-LCw"/>
+                            <constraint firstItem="q5z-sF-zmO" firstAttribute="top" secondItem="Lbe-xU-pDt" secondAttribute="bottom" constant="21" id="ZLK-6d-1V3"/>
+                            <constraint firstItem="q5z-sF-zmO" firstAttribute="leading" secondItem="Est-WX-r2O" secondAttribute="leading" constant="16" id="clF-oz-02d"/>
+                            <constraint firstItem="Est-WX-r2O" firstAttribute="trailing" secondItem="q5z-sF-zmO" secondAttribute="trailing" constant="16" id="kKN-QH-Po8"/>
+                            <constraint firstItem="q5z-sF-zmO" firstAttribute="bottom" secondItem="Est-WX-r2O" secondAttribute="bottom" id="raV-Tc-P0q"/>
+                            <constraint firstItem="I1U-Dk-8hb" firstAttribute="leading" secondItem="Est-WX-r2O" secondAttribute="leading" id="v6D-Fy-aYQ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="hUQ-Aa-DUk"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uVb-88-Xny" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="333.58778625954199" y="1004.9295774647887"/>
+        </scene>
+        <!--Favourites-->
+        <scene sceneID="WAH-U4-Akx">
+            <objects>
+                <navigationController id="yKj-HZ-k46" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Favourites" image="heart" catalog="system" selectedImage="heart.fill" id="vob-HV-c4P"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="83L-eR-sXf">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="m19-hr-D6i" kind="relationship" relationship="rootViewController" id="faP-VO-T7v"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="unR-3y-rvR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1691" y="266"/>
+        </scene>
+        <!--FavouritesVC-->
+        <scene sceneID="g0L-Op-XaZ">
+            <objects>
+                <viewController storyboardIdentifier="FavouritesVC" id="m19-hr-D6i" customClass="FavouritesVC" customModule="Recipe_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="173-NL-hWl">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Hla-05-NjO"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="jSz-Fu-PtP"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zzc-2n-obO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="132" y="-27"/>
+            <point key="canvasLocation" x="1691" y="1005"/>
         </scene>
     </scenes>
     <resources>
+        <image name="heart" catalog="system" width="128" height="107"/>
+        <image name="heart.fill" catalog="system" width="128" height="107"/>
+        <image name="house" catalog="system" width="128" height="104"/>
+        <image name="house.fill" catalog="system" width="128" height="104"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

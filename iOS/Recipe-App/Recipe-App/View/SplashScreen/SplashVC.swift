@@ -28,7 +28,7 @@ extension SplashVC {
     @objc func imageTapped(gesture: UIGestureRecognizer) {
         if (gesture.view as? UIImageView) != nil {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let homeVC = storyboard.instantiateViewController(withIdentifier: K.ViewsControllers.homeViewController)
+            let homeVC = storyboard.instantiateViewController(withIdentifier: K.ViewsControllers.UITabBarVC)
             if let sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate {
                 UIView.transition(with: sceneDelegate.window!, duration: 0.3, options: .transitionCrossDissolve, animations: {
                     sceneDelegate.window?.rootViewController = homeVC
