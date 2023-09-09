@@ -31,6 +31,6 @@ extension FavouritesVC: UITableViewDelegate, UITableViewDataSource {
 }
 extension FavouritesVC {
     func setupUI() {
-       
+        savedItemsTableVIew.backgroundColor = .clear
     }
 }

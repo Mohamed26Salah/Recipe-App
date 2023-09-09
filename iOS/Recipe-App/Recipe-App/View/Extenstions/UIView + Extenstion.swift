@@ -16,4 +16,14 @@ extension UIView {
         layer.shouldRasterize = true
         layer.rasterizationScale = scale ? UIScreen.main.scale : 1
     }
+    func roundBottomCorners(radius: CGFloat) {
+        let path = UIBezierPath(
+            roundedRect: bounds,
+            byRoundingCorners: [.bottomLeft, .bottomRight],
+            cornerRadii: CGSize(width: radius, height: radius)
+        )
+        let mask = CAShapeLayer()
+        mask.path = path.cgPath
+        layer.mask = mask
+    }
 }

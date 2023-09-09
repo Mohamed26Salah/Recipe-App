@@ -16,10 +16,12 @@ class FoodTVC: UITableViewCell {
     @IBOutlet weak var firstIngredientLabel: UILabel!
     @IBOutlet weak var secoundIngredientLabel: UILabel!
     @IBOutlet weak var thirdIngredientLabel: UILabel!
+    @IBOutlet weak var bottomView: UIView!
     var onFavButtonTapped: (() -> Void)?
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        bottomView.layer.cornerRadius = 8
         // Initialization code
     }
 

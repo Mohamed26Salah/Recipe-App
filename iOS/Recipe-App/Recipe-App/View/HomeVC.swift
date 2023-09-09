@@ -32,5 +32,6 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
 }
 extension HomeVC {
     func setupUI() {
+        foodTableView.backgroundColor = .clear
     }
 }
