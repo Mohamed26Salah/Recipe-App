@@ -33,6 +33,7 @@ extension FoodDetailsVC {
     }
     func applyCustomNavigationColor() {
         let customColor = UIColor(red: 273.0/255.0, green: 106.0/255.0, blue: 50.0/255.0, alpha: 1.0)
+
         navigationController?.navigationBar.tintColor = customColor
     }
 }

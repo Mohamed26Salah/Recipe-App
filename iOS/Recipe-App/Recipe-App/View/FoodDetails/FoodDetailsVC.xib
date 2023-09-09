@@ -34,6 +34,11 @@
                                     <constraints>
                                         <constraint firstAttribute="height" constant="269" id="0YN-LT-5S1"/>
                                     </constraints>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <integer key="value" value="15"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
                                 </imageView>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="de7-Ha-cDM">
                                     <rect key="frame" x="30" y="49" width="333" height="269"/>
@@ -80,15 +85,56 @@
                                         <constraint firstItem="rRo-f2-qnS" firstAttribute="leading" secondItem="de7-Ha-cDM" secondAttribute="leading" constant="80" id="ZEt-Fz-gpU"/>
                                         <constraint firstItem="rRo-f2-qnS" firstAttribute="top" secondItem="xru-11-nbu" secondAttribute="bottom" constant="29" id="iOu-Hu-ScO"/>
                                     </constraints>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <integer key="value" value="15"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
                                 </view>
+                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="tY9-Ry-93Q">
+                                    <rect key="frame" x="30" y="355" width="333" height="52"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3cD-rT-dRl">
+                                            <rect key="frame" x="0.0" y="0.0" width="154.66666666666666" height="52"/>
+                                            <color key="backgroundColor" red="0.18039215689999999" green="0.67450980390000004" blue="0.66666666669999997" alpha="0.84963541669999998" colorSpace="calibratedRGB"/>
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <state key="normal" title="Button"/>
+                                            <buttonConfiguration key="configuration" style="plain" title="Ingredients"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                    <integer key="value" value="10"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TeA-4a-IyR">
+                                            <rect key="frame" x="178.66666666666663" y="0.0" width="154.33333333333337" height="52"/>
+                                            <color key="backgroundColor" red="0.1803921568627451" green="0.67450980392156867" blue="0.66666666666666663" alpha="0.14763020833333343" colorSpace="calibratedRGB"/>
+                                            <state key="normal" title="Button"/>
+                                            <buttonConfiguration key="configuration" style="plain" title="Details">
+                                                <color key="baseForegroundColor" red="0.1803921568627451" green="0.67450980392156867" blue="0.66666666666666663" alpha="0.84963541666666664" colorSpace="calibratedRGB"/>
+                                            </buttonConfiguration>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                    <integer key="value" value="10"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="52" id="Fgd-nP-2h3"/>
+                                    </constraints>
+                                </stackView>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
                                 <constraint firstItem="de7-Ha-cDM" firstAttribute="top" secondItem="h4e-u3-qFI" secondAttribute="top" constant="49" id="3b3-Pb-ZiY"/>
+                                <constraint firstItem="tY9-Ry-93Q" firstAttribute="top" secondItem="9Aq-uc-WN0" secondAttribute="bottom" constant="37" id="9j8-MF-ug0"/>
+                                <constraint firstAttribute="trailing" secondItem="tY9-Ry-93Q" secondAttribute="trailing" constant="30" id="O2x-Op-OaI"/>
                                 <constraint firstAttribute="trailing" secondItem="de7-Ha-cDM" secondAttribute="trailing" constant="30" id="Qzz-ON-WwH"/>
                                 <constraint firstItem="9Aq-uc-WN0" firstAttribute="top" secondItem="h4e-u3-qFI" secondAttribute="top" constant="49" id="SPc-JI-pCz"/>
                                 <constraint firstItem="de7-Ha-cDM" firstAttribute="leading" secondItem="h4e-u3-qFI" secondAttribute="leading" constant="30" id="VF3-n7-A3v"/>
                                 <constraint firstItem="9Aq-uc-WN0" firstAttribute="leading" secondItem="h4e-u3-qFI" secondAttribute="leading" constant="30" id="WDS-y0-dse"/>
+                                <constraint firstItem="tY9-Ry-93Q" firstAttribute="leading" secondItem="h4e-u3-qFI" secondAttribute="leading" constant="30" id="pl7-ot-dSP"/>
                                 <constraint firstAttribute="trailing" secondItem="9Aq-uc-WN0" secondAttribute="trailing" constant="30" id="s7g-H4-Agx"/>
                             </constraints>
                         </view>
