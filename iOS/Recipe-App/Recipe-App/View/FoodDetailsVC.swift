@@ -12,15 +12,33 @@ class FoodDetailsVC: UIViewController {
     
     @IBOutlet weak var recipeImage: UIImageView!
     @IBOutlet weak var recipeGradientView: UIView!
-
     @IBOutlet weak var recipeNameLabel: UILabel!
     @IBOutlet weak var watchTheVideoButton: UIButton!
+    @IBOutlet weak var ingredientsButton: UIButton!
+    @IBOutlet weak var detailsButton: UIButton!
+    @IBOutlet weak var ingredientsView: UIView!
+    @IBOutlet weak var detailsView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        ingredientsView.superview?.bringSubviewToFront(ingredientsView)
     }
 
-    @IBAction func watchTheVideoButtonTapped(_ sender: Any) {
+    @IBAction func watchTheVideoButtonTapped(_ sender: UIButton) {
+    }
+
+    @IBAction func ingrediantesDetailsButtonTapped(_ sender: UIButton) {
+        switch sender.tag {
+        case 1:
+            ingredientsView.isHidden = false
+            detailsView.isHidden = true
+        case 2:
+            detailsView.isHidden = false
+            ingredientsView.isHidden = true
+        default:
+            break
+        }
     }
 }
 extension FoodDetailsVC {

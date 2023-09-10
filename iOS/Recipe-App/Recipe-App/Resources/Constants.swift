@@ -15,11 +15,13 @@ struct K {
     }
     struct cellsResuable {
         static let FoodTVC = "FoodTVC"
+        static let IngredientsTVC = "IngredientsTVC"
     }
     struct ViewsControllers {
         static let UITabBarVC = "UITabBarVC"
         static let homeViewController = "HomeVC"
         static let FavouritesViewController = "FavouritesVC"
+        static let FoodDetailsVC = "FoodDetailsVC"
 
     }
     struct ImageAssets {

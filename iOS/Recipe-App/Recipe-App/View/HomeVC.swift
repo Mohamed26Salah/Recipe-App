@@ -29,10 +29,10 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let foodDetails = FoodDetailsVC()
-        foodDetails.hidesBottomBarWhenPushed = true
-        navigationController?.pushViewController(foodDetails, animated: true)
-//        self.foodTableView.deselectRow(at: self.foodTableView.indexPathForSelectedRow!, animated: true)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let recipeVC = storyboard.instantiateViewController(withIdentifier: K.ViewsControllers.FoodDetailsVC)
+        recipeVC.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(recipeVC, animated: true)
     }
 
 }
