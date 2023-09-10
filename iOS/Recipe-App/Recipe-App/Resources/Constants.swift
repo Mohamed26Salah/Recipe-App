@@ -16,6 +16,7 @@ struct K {
     struct cellsResuable {
         static let FoodTVC = "FoodTVC"
         static let IngredientsTVC = "IngredientsTVC"
+        static let InstructionTVC = "InstructionTVC"
     }
     struct ViewsControllers {
         static let UITabBarVC = "UITabBarVC"

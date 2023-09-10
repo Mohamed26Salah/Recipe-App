@@ -35,6 +35,8 @@
 		ABF80E6A2AADF0BD000ACB77 /* IngredientsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF80E682AADF0BD000ACB77 /* IngredientsTVC.swift */; };
 		ABF80E6B2AADF0BD000ACB77 /* IngredientsTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABF80E692AADF0BD000ACB77 /* IngredientsTVC.xib */; };
 		ABF80E6D2AADF208000ACB77 /* IngredientsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF80E6C2AADF208000ACB77 /* IngredientsVC.swift */; };
+		ABF80E712AADF3F7000ACB77 /* InstructionTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF80E6F2AADF3F7000ACB77 /* InstructionTVC.swift */; };
+		ABF80E722AADF3F7000ACB77 /* InstructionTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABF80E702AADF3F7000ACB77 /* InstructionTVC.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AB8066692AADF97F004C3843 /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
 		ABAABAF82AAD2B8B009E5301 /* Poppins-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
 		ABAABAF92AAD2BDB009E5301 /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
 		ABB587F02AACDDFC00676EEF /* UIView + Extenstion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Extenstion.swift"; sourceTree = "<group>"; };
@@ -91,6 +94,8 @@
 		ABF80E682AADF0BD000ACB77 /* IngredientsTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsTVC.swift; sourceTree = "<group>"; };
 		ABF80E692AADF0BD000ACB77 /* IngredientsTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IngredientsTVC.xib; sourceTree = "<group>"; };
 		ABF80E6C2AADF208000ACB77 /* IngredientsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsVC.swift; sourceTree = "<group>"; };
+		ABF80E6F2AADF3F7000ACB77 /* InstructionTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionTVC.swift; sourceTree = "<group>"; };
+		ABF80E702AADF3F7000ACB77 /* InstructionTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InstructionTVC.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,6 +198,7 @@
 				ABF80E6C2AADF208000ACB77 /* IngredientsVC.swift */,
 				ABDEA5C72AAC73DB000C957A /* Main.storyboard */,
 				ABDEA5CC2AAC73DC000C957A /* LaunchScreen.storyboard */,
+				ABF80E6E2AADF3B9000ACB77 /* InstructionCell */,
 				ABF80E672AADF09F000ACB77 /* IngredientsCell */,
 				ABDEA61A2AACBE24000C957A /* FoodCell */,
 				ABDEA5FE2AAC8BC5000C957A /* SplashScreen */,
@@ -246,6 +252,7 @@
 			isa = PBXGroup;
 			children = (
 				ABDEA6042AAC8CA8000C957A /* Constants.swift */,
+				AB8066692AADF97F004C3843 /* Poppins-Regular.ttf */,
 				ABAABAF92AAD2BDB009E5301 /* Poppins-SemiBold.ttf */,
 				ABAABAF82AAD2B8B009E5301 /* Poppins-SemiBoldItalic.ttf */,
 				ABDEA61F2AACC1AE000C957A /* Poppins-Medium.ttf */,
@@ -279,6 +286,15 @@
 				ABF80E692AADF0BD000ACB77 /* IngredientsTVC.xib */,
 			);
 			path = IngredientsCell;
+			sourceTree = "<group>";
+		};
+		ABF80E6E2AADF3B9000ACB77 /* InstructionCell */ = {
+			isa = PBXGroup;
+			children = (
+				ABF80E6F2AADF3F7000ACB77 /* InstructionTVC.swift */,
+				ABF80E702AADF3F7000ACB77 /* InstructionTVC.xib */,
+			);
+			path = InstructionCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -394,6 +410,7 @@
 				ABDEA5CE2AAC73DC000C957A /* LaunchScreen.storyboard in Resources */,
 				ABDEA6022AAC8BDD000C957A /* SplashVC.xib in Resources */,
 				ABDEA5CB2AAC73DC000C957A /* Assets.xcassets in Resources */,
+				ABF80E722AADF3F7000ACB77 /* InstructionTVC.xib in Resources */,
 				ABDEA5C92AAC73DB000C957A /* Main.storyboard in Resources */,
 				ABF80E6B2AADF0BD000ACB77 /* IngredientsTVC.xib in Resources */,
 				ABDEA61E2AACBE52000C957A /* FoodTVC.xib in Resources */,
@@ -425,6 +442,7 @@
 				ABDEA6152AACB3B3000C957A /* HomeVC.swift in Sources */,
 				ABB588002AAD082200676EEF /* UIImage + Extenstion.swift in Sources */,
 				ABB587F12AACDDFC00676EEF /* UIView + Extenstion.swift in Sources */,
+				ABF80E712AADF3F7000ACB77 /* InstructionTVC.swift in Sources */,
 				ABDEA6092AACA3B8000C957A /* SceneDelegate.swift in Sources */,
 				ABF80E6A2AADF0BD000ACB77 /* IngredientsTVC.swift in Sources */,
 				ABDEA6222AACCBC7000C957A /* RadioButton.swift in Sources */,
