@@ -17,6 +17,7 @@ struct K {
         static let FoodTVC = "FoodTVC"
         static let IngredientsTVC = "IngredientsTVC"
         static let InstructionTVC = "InstructionTVC"
+        static let NutritionTVC = "NutritionTVC"
     }
     struct ViewsControllers {
         static let UITabBarVC = "UITabBarVC"

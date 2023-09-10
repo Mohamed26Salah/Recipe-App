@@ -10,6 +10,7 @@
 		<string>Poppins-SemiBoldItalic.ttf</string>
 		<string>Poppins-SemiBold.ttf</string>
 		<string>Poppins-Regular.ttf</string>
+		<string>Inter-VariableFont_slnt,wght.ttf</string>
 	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>

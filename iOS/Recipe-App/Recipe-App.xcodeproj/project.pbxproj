@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AB80666C2AAE119B004C3843 /* DetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB80666B2AAE119B004C3843 /* DetailsVC.swift */; };
+		AB8066702AAE1749004C3843 /* NutritionTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB80666E2AAE1749004C3843 /* NutritionTVC.swift */; };
+		AB8066712AAE1749004C3843 /* NutritionTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB80666F2AAE1749004C3843 /* NutritionTVC.xib */; };
 		ABB587F12AACDDFC00676EEF /* UIView + Extenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB587F02AACDDFC00676EEF /* UIView + Extenstion.swift */; };
 		ABB587F92AACECA700676EEF /* UIViewController + Extenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB587F82AACECA700676EEF /* UIViewController + Extenstion.swift */; };
 		ABB587FC2AACFF9E00676EEF /* FoodDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB587FA2AACFF9E00676EEF /* FoodDetailsVC.swift */; };
@@ -58,6 +61,10 @@
 
 /* Begin PBXFileReference section */
 		AB8066692AADF97F004C3843 /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
+		AB80666A2AAE0791004C3843 /* Inter-VariableFont_slnt,wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-VariableFont_slnt,wght.ttf"; sourceTree = "<group>"; };
+		AB80666B2AAE119B004C3843 /* DetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsVC.swift; sourceTree = "<group>"; };
+		AB80666E2AAE1749004C3843 /* NutritionTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionTVC.swift; sourceTree = "<group>"; };
+		AB80666F2AAE1749004C3843 /* NutritionTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NutritionTVC.xib; sourceTree = "<group>"; };
 		ABAABAF82AAD2B8B009E5301 /* Poppins-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
 		ABAABAF92AAD2BDB009E5301 /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
 		ABB587F02AACDDFC00676EEF /* UIView + Extenstion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Extenstion.swift"; sourceTree = "<group>"; };
@@ -124,6 +131,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AB80666D2AAE1730004C3843 /* NutritionCell */ = {
+			isa = PBXGroup;
+			children = (
+				AB80666E2AAE1749004C3843 /* NutritionTVC.swift */,
+				AB80666F2AAE1749004C3843 /* NutritionTVC.xib */,
+			);
+			path = NutritionCell;
+			sourceTree = "<group>";
+		};
 		ABB587EF2AACDDE100676EEF /* Extenstions */ = {
 			isa = PBXGroup;
 			children = (
@@ -196,8 +212,10 @@
 				ABDEA6162AACB3CD000C957A /* FavouritesVC.swift */,
 				ABB587FA2AACFF9E00676EEF /* FoodDetailsVC.swift */,
 				ABF80E6C2AADF208000ACB77 /* IngredientsVC.swift */,
+				AB80666B2AAE119B004C3843 /* DetailsVC.swift */,
 				ABDEA5C72AAC73DB000C957A /* Main.storyboard */,
 				ABDEA5CC2AAC73DC000C957A /* LaunchScreen.storyboard */,
+				AB80666D2AAE1730004C3843 /* NutritionCell */,
 				ABF80E6E2AADF3B9000ACB77 /* InstructionCell */,
 				ABF80E672AADF09F000ACB77 /* IngredientsCell */,
 				ABDEA61A2AACBE24000C957A /* FoodCell */,
@@ -252,6 +270,7 @@
 			isa = PBXGroup;
 			children = (
 				ABDEA6042AAC8CA8000C957A /* Constants.swift */,
+				AB80666A2AAE0791004C3843 /* Inter-VariableFont_slnt,wght.ttf */,
 				AB8066692AADF97F004C3843 /* Poppins-Regular.ttf */,
 				ABAABAF92AAD2BDB009E5301 /* Poppins-SemiBold.ttf */,
 				ABAABAF82AAD2B8B009E5301 /* Poppins-SemiBoldItalic.ttf */,
@@ -409,6 +428,7 @@
 			files = (
 				ABDEA5CE2AAC73DC000C957A /* LaunchScreen.storyboard in Resources */,
 				ABDEA6022AAC8BDD000C957A /* SplashVC.xib in Resources */,
+				AB8066712AAE1749004C3843 /* NutritionTVC.xib in Resources */,
 				ABDEA5CB2AAC73DC000C957A /* Assets.xcassets in Resources */,
 				ABF80E722AADF3F7000ACB77 /* InstructionTVC.xib in Resources */,
 				ABDEA5C92AAC73DB000C957A /* Main.storyboard in Resources */,
@@ -447,6 +467,8 @@
 				ABF80E6A2AADF0BD000ACB77 /* IngredientsTVC.swift in Sources */,
 				ABDEA6222AACCBC7000C957A /* RadioButton.swift in Sources */,
 				ABF80E6D2AADF208000ACB77 /* IngredientsVC.swift in Sources */,
+				AB8066702AAE1749004C3843 /* NutritionTVC.swift in Sources */,
+				AB80666C2AAE119B004C3843 /* DetailsVC.swift in Sources */,
 				ABDEA6192AACB441000C957A /* BasicVC.swift in Sources */,
 				ABB587FC2AACFF9E00676EEF /* FoodDetailsVC.swift in Sources */,
 				ABDEA5C22AAC73DB000C957A /* AppDelegate.swift in Sources */,
