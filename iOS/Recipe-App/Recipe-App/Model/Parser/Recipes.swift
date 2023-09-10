@@ -1,19 +1,17 @@
 //
-//  test2.swift
+//  Recipes.swift
 //  Recipe-App
 //
-//  Created by Mohamed Salah on 09/09/2023.
+//  Created by Mohamed Salah on 10/09/2023.
 //
-
-import Foundation
 
 import Foundation
 import OptionallyDecodable
 
-// MARK: - DecodeScene
-struct DecodeScene: Codable {
+// MARK: - Recipes
+struct Recipes: Codable {
     var count: Int
-    var results: [Result]
+    var results: [RecipesList]
 
     enum CodingKeys: String, CodingKey {
         case count = "count"
@@ -21,114 +19,114 @@ struct DecodeScene: Codable {
     }
 }
 
-// MARK: - Result
-struct Result: Codable {
-    var nutritionVisibility: NutritionVisibility?
+// MARK: - RecipesList
+struct RecipesList: Codable {
+    var id: Int
+    var buzzID: Int?
+    var originalVideoURL: String?
     var country: Country?
     var instructions: [Instruction]
-    var language: Language?
-    var cookTimeMinutes: Int?
-    var promotion: Promotion?
-    var seoPath: String
-    var brand: JSONNull?
-    var thumbnailURL: String
-    var totalTimeMinutes: Int?
-    var topics: [Topic]
-    var totalTimeTier: TotalTimeTier
-    var slug: String
-    var description: String
-    var draftStatus: DraftStatus?
-    var updatedAt: Int
-    var servingsNounPlural: ServingsNounPlural?
-    var beautyURL: JSONNull?
-    var canonicalID: String
-    var videoID: Int?
-    var keywords: String?
-    var servingsNounSingular: ServingsNounSingular?
-    var nutrition: Nutrition
+    var userRatings: UserRatings
+    var price: Price
     var name: String
     var thumbnailAltText: String
-    var yields: String
-    var id: Int
-    var brandID: JSONNull?
-    var compilations: [Compilation]
-    var show: Show
-    var inspiredByURL: String?
     var isShoppable: Bool
-    var tipsAndRatingsEnabled: Bool
-    var aspectRatio: AspectRatio?
-    var isOneTop: Bool
-    var originalVideoURL: String?
-    var price: Price
-    var showID: Int
-    var prepTimeMinutes: Int?
-    var buzzID: Int?
+    var keywords: String?
+    var servingsNounPlural: ServingsNounPlural?
+    var beautyURL: JSONNull?
+    var yields: String
+    var canonicalID: String
+    var facebookPosts: [JSONAny]
+    var servingsNounSingular: ServingsNounSingular?
     var createdAt: Int
+    var totalTimeMinutes: Int?
+    var videoURL: String?
+    var nutritionVisibility: NutritionVisibility?
+    var seoPath: String
+    var brand: JSONNull?
+    var slug: String
+    var nutrition: Nutrition
+    var show: Show
+    var description: String
+    var thumbnailURL: String
+    var totalTimeTier: TotalTimeTier
+    var seoTitle: String?
+    var videoID: Int?
+    var language: Language?
+    var prepTimeMinutes: Int?
+    var compilations: [Compilation]
+    var numServings: Int
+    var tipsAndRatingsEnabled: Bool
+    var updatedAt: Int
+    var renditions: [Rendition]
+    var videoAdContent: VideoAdContent?
+    var aspectRatio: AspectRatio?
+    var cookTimeMinutes: Int?
+    var showID: Int
+    var sections: [Section]
+    var brandID: JSONNull?
+    var tags: [Tag]
+    var draftStatus: DraftStatus?
+    var inspiredByURL: String?
     var credits: [Credit]
     var approvedAt: Int
-    var videoAdContent: VideoAdContent?
-    var seoTitle: String?
-    var facebookPosts: [JSONAny]
-    var userRatings: UserRatings
-    var sections: [Section]
-    var tags: [Tag]
-    var numServings: Int
-    var videoURL: String?
-    var renditions: [Rendition]
+    var isOneTop: Bool
+    var topics: [Topic]
+    var promotion: Promotion?
 
     enum CodingKeys: String, CodingKey {
-        case nutritionVisibility = "nutrition_visibility"
+        case id = "id"
+        case buzzID = "buzz_id"
+        case originalVideoURL = "original_video_url"
         case country = "country"
         case instructions = "instructions"
-        case language = "language"
-        case cookTimeMinutes = "cook_time_minutes"
-        case promotion = "promotion"
-        case seoPath = "seo_path"
-        case brand = "brand"
-        case thumbnailURL = "thumbnail_url"
-        case totalTimeMinutes = "total_time_minutes"
-        case topics = "topics"
-        case totalTimeTier = "total_time_tier"
-        case slug = "slug"
-        case description = "description"
-        case draftStatus = "draft_status"
-        case updatedAt = "updated_at"
-        case servingsNounPlural = "servings_noun_plural"
-        case beautyURL = "beauty_url"
-        case canonicalID = "canonical_id"
-        case videoID = "video_id"
-        case keywords = "keywords"
-        case servingsNounSingular = "servings_noun_singular"
-        case nutrition = "nutrition"
+        case userRatings = "user_ratings"
+        case price = "price"
         case name = "name"
         case thumbnailAltText = "thumbnail_alt_text"
-        case yields = "yields"
-        case id = "id"
-        case brandID = "brand_id"
-        case compilations = "compilations"
-        case show = "show"
-        case inspiredByURL = "inspired_by_url"
         case isShoppable = "is_shoppable"
-        case tipsAndRatingsEnabled = "tips_and_ratings_enabled"
-        case aspectRatio = "aspect_ratio"
-        case isOneTop = "is_one_top"
-        case originalVideoURL = "original_video_url"
-        case price = "price"
-        case showID = "show_id"
-        case prepTimeMinutes = "prep_time_minutes"
-        case buzzID = "buzz_id"
+        case keywords = "keywords"
+        case servingsNounPlural = "servings_noun_plural"
+        case beautyURL = "beauty_url"
+        case yields = "yields"
+        case canonicalID = "canonical_id"
+        case facebookPosts = "facebook_posts"
+        case servingsNounSingular = "servings_noun_singular"
         case createdAt = "created_at"
+        case totalTimeMinutes = "total_time_minutes"
+        case videoURL = "video_url"
+        case nutritionVisibility = "nutrition_visibility"
+        case seoPath = "seo_path"
+        case brand = "brand"
+        case slug = "slug"
+        case nutrition = "nutrition"
+        case show = "show"
+        case description = "description"
+        case thumbnailURL = "thumbnail_url"
+        case totalTimeTier = "total_time_tier"
+        case seoTitle = "seo_title"
+        case videoID = "video_id"
+        case language = "language"
+        case prepTimeMinutes = "prep_time_minutes"
+        case compilations = "compilations"
+        case numServings = "num_servings"
+        case tipsAndRatingsEnabled = "tips_and_ratings_enabled"
+        case updatedAt = "updated_at"
+        case renditions = "renditions"
+        case videoAdContent = "video_ad_content"
+        case aspectRatio = "aspect_ratio"
+        case cookTimeMinutes = "cook_time_minutes"
+        case showID = "show_id"
+        case sections = "sections"
+        case brandID = "brand_id"
+        case tags = "tags"
+        case draftStatus = "draft_status"
+        case inspiredByURL = "inspired_by_url"
         case credits = "credits"
         case approvedAt = "approved_at"
-        case videoAdContent = "video_ad_content"
-        case seoTitle = "seo_title"
-        case facebookPosts = "facebook_posts"
-        case userRatings = "user_ratings"
-        case sections = "sections"
-        case tags = "tags"
-        case numServings = "num_servings"
-        case videoURL = "video_url"
-        case renditions = "renditions"
+        case isOneTop = "is_one_top"
+        case topics = "topics"
+        case promotion = "promotion"
     }
 }
 
@@ -140,52 +138,52 @@ enum AspectRatio: String, Codable {
 
 // MARK: - Compilation
 struct Compilation: Codable {
-    var createdAt: Int
-    var thumbnailURL: String
-    var canonicalID: String
-    var isShoppable: Bool
-    var language: Language?
-    var name: String
-    var id: Int
-    var buzzID: Int?
-    var videoURL: String
-    var beautyURL: String?
-    var aspectRatio: AspectRatio?
-    var country: Country?
-    var keywords: JSONNull?
-    var facebookPosts: [JSONAny]
-    var show: [Show]
-    var description: String?
-    var slug: String
-    var draftStatus: DraftStatus?
-    var thumbnailAltText: ThumbnailAltText?
-    var approvedAt: Int
-    var promotion: Promotion?
     var videoID: Int
+    var createdAt: Int
+    var videoURL: String
+    var slug: String
+    var id: Int
+    var promotion: Promotion?
+    var country: Country?
+    var isShoppable: Bool
+    var show: [Show]
+    var thumbnailURL: String
+    var approvedAt: Int
+    var aspectRatio: AspectRatio?
+    var keywords: JSONNull?
+    var language: Language?
+    var thumbnailAltText: ThumbnailAltText?
+    var name: String
+    var canonicalID: String
+    var beautyURL: String?
+    var buzzID: Int?
+    var facebookPosts: [JSONAny]
+    var description: String?
+    var draftStatus: DraftStatus?
 
     enum CodingKeys: String, CodingKey {
-        case createdAt = "created_at"
-        case thumbnailURL = "thumbnail_url"
-        case canonicalID = "canonical_id"
-        case isShoppable = "is_shoppable"
-        case language = "language"
-        case name = "name"
-        case id = "id"
-        case buzzID = "buzz_id"
-        case videoURL = "video_url"
-        case beautyURL = "beauty_url"
-        case aspectRatio = "aspect_ratio"
-        case country = "country"
-        case keywords = "keywords"
-        case facebookPosts = "facebook_posts"
-        case show = "show"
-        case description = "description"
-        case slug = "slug"
-        case draftStatus = "draft_status"
-        case thumbnailAltText = "thumbnail_alt_text"
-        case approvedAt = "approved_at"
-        case promotion = "promotion"
         case videoID = "video_id"
+        case createdAt = "created_at"
+        case videoURL = "video_url"
+        case slug = "slug"
+        case id = "id"
+        case promotion = "promotion"
+        case country = "country"
+        case isShoppable = "is_shoppable"
+        case show = "show"
+        case thumbnailURL = "thumbnail_url"
+        case approvedAt = "approved_at"
+        case aspectRatio = "aspect_ratio"
+        case keywords = "keywords"
+        case language = "language"
+        case thumbnailAltText = "thumbnail_alt_text"
+        case name = "name"
+        case canonicalID = "canonical_id"
+        case beautyURL = "beauty_url"
+        case buzzID = "buzz_id"
+        case facebookPosts = "facebook_posts"
+        case description = "description"
+        case draftStatus = "draft_status"
     }
 }
 
@@ -204,13 +202,12 @@ enum Language: String, Codable {
 
 enum Promotion: String, Codable {
     case full = "full"
-    case none = "none"
     case partial = "partial"
 }
 
 // MARK: - Show
 struct Show: Codable {
-    var name: Name?
+    var name: ShowName?
     var id: Int
 
     enum CodingKeys: String, CodingKey {
@@ -219,7 +216,7 @@ struct Show: Codable {
     }
 }
 
-enum Name: String, Codable {
+enum ShowName: String, Codable {
     case goodful = "Goodful"
     case tasty = "Tasty"
     case tastyTastyJunior = "Tasty: Tasty Junior"
@@ -233,17 +230,16 @@ enum ThumbnailAltText: String, Codable {
     case goodLuckFood = "Good Luck Food"
     case onePotRecipes = "One-Pot Recipes"
     case summerBreakRecipesForYourKids = "Summer Break Recipes For Your Kids"
-    case tastyFoodForEveryMood = "Tasty Food For Every Mood"
 }
 
 // MARK: - Credit
 struct Credit: Codable {
-    var type: TypeEnum?
     var name: String?
+    var type: TypeEnum?
 
     enum CodingKeys: String, CodingKey {
-        case type = "type"
         case name = "name"
+        case type = "type"
     }
 }
 
@@ -254,43 +250,48 @@ enum TypeEnum: String, Codable {
 
 // MARK: - Instruction
 struct Instruction: Codable {
+    var id: Int
+    var position: Int
+    var displayText: String
     var startTime: Int
     var appliance: String?
     var endTime: Int
     var temperature: Int?
-    var id: Int
-    var position: Int
-    var displayText: String
 
     enum CodingKeys: String, CodingKey {
+        case id = "id"
+        case position = "position"
+        case displayText = "display_text"
         case startTime = "start_time"
         case appliance = "appliance"
         case endTime = "end_time"
         case temperature = "temperature"
-        case id = "id"
-        case position = "position"
-        case displayText = "display_text"
     }
 }
 
 // MARK: - Nutrition
 struct Nutrition: Codable {
-    var sugar: Int
-    var carbohydrates: Int
-    var fiber: Int
-    var updatedAt: Date
     var protein: Int
     var fat: Int
     var calories: Int
+    var sugar: Int
+    var carbohydrates: Int
+    var fiber: Int
+    var updatedAtString: String
+    var updatedAt: Date? {
+          let formatter = DateFormatter()
+          formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ" // adjust this format to match your date string
+          return formatter.date(from: updatedAtString)
+      }
 
     enum CodingKeys: String, CodingKey {
-        case sugar = "sugar"
-        case carbohydrates = "carbohydrates"
-        case fiber = "fiber"
-        case updatedAt = "updated_at"
         case protein = "protein"
         case fat = "fat"
         case calories = "calories"
+        case sugar = "sugar"
+        case carbohydrates = "carbohydrates"
+        case fiber = "fiber"
+        case updatedAtString = "updated_at"
     }
 }
 
@@ -300,51 +301,58 @@ enum NutritionVisibility: String, Codable {
 
 // MARK: - Price
 struct Price: Codable {
+    var consumptionPortion: Int
     var total: Int
-    var updatedAt: Date
+    var updatedAtString: String
     var portion: Int
     var consumptionTotal: Int
-    var consumptionPortion: Int
+
+    var updatedAt: Date? {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ" // adjust this format to match your date string
+        return formatter.date(from: updatedAtString)
+    }
 
     enum CodingKeys: String, CodingKey {
+        case consumptionPortion = "consumption_portion"
         case total = "total"
-        case updatedAt = "updated_at"
+        case updatedAtString = "updated_at"
         case portion = "portion"
         case consumptionTotal = "consumption_total"
-        case consumptionPortion = "consumption_portion"
     }
 }
 
+
 // MARK: - Rendition
 struct Rendition: Codable {
-    var duration: Int
-    var bitRate: Int?
-    var contentType: ContentType?
-    var aspect: Aspect?
-    var minimumBitRate: Int?
-    var name: String
-    var maximumBitRate: Int?
-    var container: Container?
     var height: Int
     var fileSize: Int?
     var url: String
-    var width: Int
+    var duration: Int
+    var bitRate: Int?
+    var name: RenditionName?
+    var minimumBitRate: Int?
+    var maximumBitRate: Int?
+    var container: Container?
     var posterURL: String
+    var contentType: ContentType?
+    var aspect: Aspect?
+    var width: Int
 
     enum CodingKeys: String, CodingKey {
-        case duration = "duration"
-        case bitRate = "bit_rate"
-        case contentType = "content_type"
-        case aspect = "aspect"
-        case minimumBitRate = "minimum_bit_rate"
-        case name = "name"
-        case maximumBitRate = "maximum_bit_rate"
-        case container = "container"
         case height = "height"
         case fileSize = "file_size"
         case url = "url"
-        case width = "width"
+        case duration = "duration"
+        case bitRate = "bit_rate"
+        case name = "name"
+        case minimumBitRate = "minimum_bit_rate"
+        case maximumBitRate = "maximum_bit_rate"
+        case container = "container"
         case posterURL = "poster_url"
+        case contentType = "content_type"
+        case aspect = "aspect"
+        case width = "width"
     }
 }
 
@@ -363,6 +371,18 @@ enum ContentType: String, Codable {
     case videoMp4 = "video/mp4"
 }
 
+enum RenditionName: String, Codable {
+    case low = "low"
+    case mp41280X720 = "mp4_1280x720"
+    case mp4320X180 = "mp4_320x180"
+    case mp4320X320 = "mp4_320x320"
+    case mp4480X480 = "mp4_480x480"
+    case mp4640X360 = "mp4_640x360"
+    case mp4640X640 = "mp4_640x640"
+    case mp4720X404 = "mp4_720x404"
+    case mp4720X720 = "mp4_720x720"
+}
+
 // MARK: - Section
 struct Section: Codable {
     var components: [Component]
@@ -378,20 +398,20 @@ struct Section: Codable {
 
 // MARK: - Component
 struct Component: Codable {
+    var position: Int
     var measurements: [Measurement]
     var rawText: String
     var extraComment: String
     var ingredient: Ingredient
     var id: Int
-    var position: Int
 
     enum CodingKeys: String, CodingKey {
+        case position = "position"
         case measurements = "measurements"
         case rawText = "raw_text"
         case extraComment = "extra_comment"
         case ingredient = "ingredient"
         case id = "id"
-        case position = "position"
     }
 }
 
@@ -429,18 +449,18 @@ struct Measurement: Codable {
 
 // MARK: - Unit
 struct Unit: Codable {
-    var displaySingular: String
-    var abbreviation: String
     var system: System?
     var name: String
     var displayPlural: String
+    var displaySingular: String
+    var abbreviation: String
 
     enum CodingKeys: String, CodingKey {
-        case displaySingular = "display_singular"
-        case abbreviation = "abbreviation"
         case system = "system"
         case name = "name"
         case displayPlural = "display_plural"
+        case displaySingular = "display_singular"
+        case abbreviation = "abbreviation"
     }
 }
 
@@ -465,18 +485,18 @@ enum ServingsNounSingular: String, Codable {
 
 // MARK: - Tag
 struct Tag: Codable {
-    var id: Int
     var displayName: String
     var type: String
     var rootTagType: RootTagType?
     var name: String
+    var id: Int
 
     enum CodingKeys: String, CodingKey {
-        case id = "id"
         case displayName = "display_name"
         case type = "type"
         case rootTagType = "root_tag_type"
         case name = "name"
+        case id = "id"
     }
 }
 
@@ -529,14 +549,14 @@ enum Tier: String, Codable {
 
 // MARK: - UserRatings
 struct UserRatings: Codable {
-    var countPositive: Int
     var score: Double
     var countNegative: Int
+    var countPositive: Int
 
     enum CodingKeys: String, CodingKey {
-        case countPositive = "count_positive"
         case score = "score"
         case countNegative = "count_negative"
+        case countPositive = "count_positive"
     }
 }
 

@@ -10,8 +10,8 @@ import Foundation
 
 struct K {
     struct Links {
-        static let baseUrl = "http://data.fixer.io/api/"
-        static let apiKey = "186ae7c2f82e18c99010440083889b49"
+        static let baseUrl = "https://tasty.p.rapidapi.com/recipes/"
+        static let apiKey = "24bfbf74f8mshd70a51277440043p144846jsn5651052b0f4b"
     }
     struct cellsResuable {
         static let FoodTVC = "FoodTVC"

@@ -9,6 +9,8 @@ import UIKit
 
 class FoodTVC: UITableViewCell {
 
+    @IBOutlet weak var ratingBackgroundView: UIView!
+    @IBOutlet weak var recipeImage: UIImageView!
     @IBOutlet weak var saveButton: RadioButton!
     @IBOutlet weak var timeNeededLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
