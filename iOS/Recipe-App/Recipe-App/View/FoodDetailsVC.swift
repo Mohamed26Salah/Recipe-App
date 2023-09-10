@@ -22,24 +22,26 @@ class FoodDetailsVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        ingredientsView.superview?.bringSubviewToFront(ingredientsView)
+        ingredientsView.isHidden = false
+        detailsView.isHidden = true
     }
 
     @IBAction func watchTheVideoButtonTapped(_ sender: UIButton) {
     }
 
     @IBAction func ingrediantesDetailsButtonTapped(_ sender: UIButton) {
-        switch sender.tag {
-        case 1:
-            ingredientsView.isHidden = false
-            detailsView.isHidden = true
-        case 2:
-            detailsView.isHidden = false
-            ingredientsView.isHidden = true
-        default:
-            break
-        }
+        let animationDuration: TimeInterval = 0.5
+
+        UIView.transition(with: ingredientsView, duration: animationDuration, options: .transitionCrossDissolve, animations: {
+            self.ingredientsView.isHidden = sender.tag == 2
+        }, completion: nil)
+
+        UIView.transition(with: detailsView, duration: animationDuration, options: .transitionCrossDissolve, animations: {
+            self.detailsView.isHidden = sender.tag == 1
+        }, completion: nil)
     }
+
+
 }
 extension FoodDetailsVC {
     func setupUI() {
