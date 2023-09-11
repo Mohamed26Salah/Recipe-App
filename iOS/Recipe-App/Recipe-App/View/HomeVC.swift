@@ -23,6 +23,7 @@ class HomeVC: BasicVC {
         showRecipesData()
         handleLoadingIndicator()
         search()
+        recipeSelected()
     }
     
     @IBAction func timeFilterButtonsPressed(_ sender: UIButton) {
@@ -66,12 +67,12 @@ extension HomeVC {
                     cell.thirdIngredientLabel.text = recipe.tags[2].name
                 }
                 .disposed(by: disposeBag)
-//        recipeVC.recipesList
-//            .map { $0.isEmpty }
-//            .subscribe(onNext: { [weak self] isEmpty in
-//                self?.updateTableViewUI(isEmpty: isEmpty)
-//            })
-//            .disposed(by: disposeBag)
+        recipeVC.recipesList
+            .map { $0.isEmpty }
+            .subscribe(onNext: { [weak self] isEmpty in
+                self?.updateTableViewUI(isEmpty: isEmpty)
+            })
+            .disposed(by: disposeBag)
     }
     func search() {
         searchBar.rx.text.orEmpty
@@ -86,6 +87,18 @@ extension HomeVC {
             })
             .disposed(by: disposeBag)
     }
+    func recipeSelected() {
+        foodTableView
+            .rx.modelSelected(RecipesList.self)
+            .subscribe { [weak self] recipeObject in
+                guard let self = self else { return }
+                self.foodTableView.deselectRow(at: self.foodTableView.indexPathForSelectedRow!, animated: true)
+                let foodVc = self.storyboard?.instantiateViewController(identifier: K.ViewsControllers.FoodDetailsVC) as! FoodDetailsVC
+                foodVc.recipeDetails = recipeObject
+                self.navigationController?.pushViewController(foodVc, animated: true)
+            }
+            .disposed(by: disposeBag)
+    }
 
 }
 extension HomeVC {
@@ -95,7 +108,7 @@ extension HomeVC {
     func updateTableViewUI(isEmpty: Bool) {
         if isEmpty {
             let noDataLabel: UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: foodTableView.bounds.size.width, height: foodTableView.bounds.size.height))
-            noDataLabel.text = "We are trying to fetch the data!"
+            noDataLabel.text = "Their is nothing here!"
             noDataLabel.textColor = UIColor.black
             noDataLabel.textAlignment = .center
             foodTableView.backgroundView = noDataLabel

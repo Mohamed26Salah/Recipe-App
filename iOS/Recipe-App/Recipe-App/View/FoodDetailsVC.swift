@@ -18,7 +18,7 @@ class FoodDetailsVC: UIViewController {
     @IBOutlet weak var detailsButton: UIButton!
     @IBOutlet weak var ingredientsView: UIView!
     @IBOutlet weak var detailsView: UIView!
-    
+    var recipeDetails: RecipesList!
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
