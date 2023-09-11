@@ -83,14 +83,6 @@ extension HomeVC {
                     query.isEmpty || recipe.name.lowercased().contains(query.lowercased())
                 })
                 self.recipeVC.recipesList.accept(filteredRecipes ?? [])
-//                if query.isEmpty {
-//                    self.recipeVC.recipesList.accept(self.recipeVC.recipesModel?.results ?? [])
-//                } else {
-//                    let filteredRecipes = self.recipeVC.recipesModel?.results.filter { recipe in
-//                        return recipe.name.lowercased().contains(query.lowercased())
-//                    } ?? []
-//                    self.recipeVC.recipesList.accept(filteredRecipes)
-//                }
             })
             .disposed(by: disposeBag)
     }
