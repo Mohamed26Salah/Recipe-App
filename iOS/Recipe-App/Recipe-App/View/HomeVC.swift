@@ -11,6 +11,7 @@ import RxCocoa
 import SDWebImage
 class HomeVC: BasicVC {
 
+    @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var foodTableView: UITableView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
@@ -21,6 +22,26 @@ class HomeVC: BasicVC {
         foodTableView.register(UINib(nibName: K.cellsResuable.FoodTVC, bundle: nil), forCellReuseIdentifier: K.cellsResuable.FoodTVC)
         showRecipesData()
         handleLoadingIndicator()
+        search()
+    }
+    
+    @IBAction func timeFilterButtonsPressed(_ sender: UIButton) {
+        switch sender.tag {
+        case 0:
+            recipeVC.getRecipes(tag: "under_15_minutes")
+            recipeVC.recipesList.accept([RecipesList]())
+            break
+        case 1:
+            recipeVC.getRecipes(tag: "under_30_minutes")
+            recipeVC.recipesList.accept([RecipesList]())
+            break
+        case 2:
+            recipeVC.getRecipes(tag: "under_45_minutes")
+            recipeVC.recipesList.accept([RecipesList]())
+            break
+        default:
+            recipeVC.getRecipes()
+        }
     }
 }
 extension HomeVC {
@@ -39,6 +60,7 @@ extension HomeVC {
                     if let url = URL(string: recipe.thumbnailURL) {
                         cell.recipeImage.sd_setImage(with: url)
                     }
+                    cell.timeNeededLabel.text = recipeVC.returnTimeTier(timeTier: recipe.totalTimeTier?.displayTier ?? .under30Minutes)
                     cell.firstIngredientLabel.text = recipe.tags[0].name
                     cell.secoundIngredientLabel.text = recipe.tags[1].name
                     cell.thirdIngredientLabel.text = recipe.tags[2].name
@@ -51,6 +73,28 @@ extension HomeVC {
 //            })
 //            .disposed(by: disposeBag)
     }
+    func search() {
+        searchBar.rx.text.orEmpty
+            .throttle(.milliseconds(300), scheduler: MainScheduler.instance)
+            .distinctUntilChanged()
+            .subscribe(onNext: { [weak self] query in
+                guard let self = self else { return }
+                let filteredRecipes = self.recipeVC.recipesModel?.results.filter({ recipe in
+                    query.isEmpty || recipe.name.lowercased().contains(query.lowercased())
+                })
+                self.recipeVC.recipesList.accept(filteredRecipes ?? [])
+//                if query.isEmpty {
+//                    self.recipeVC.recipesList.accept(self.recipeVC.recipesModel?.results ?? [])
+//                } else {
+//                    let filteredRecipes = self.recipeVC.recipesModel?.results.filter { recipe in
+//                        return recipe.name.lowercased().contains(query.lowercased())
+//                    } ?? []
+//                    self.recipeVC.recipesList.accept(filteredRecipes)
+//                }
+            })
+            .disposed(by: disposeBag)
+    }
+
 }
 extension HomeVC {
     func setupUI() {

@@ -32,16 +32,16 @@ struct RecipesList: Codable {
     var thumbnailAltText: String
     var isShoppable: Bool
     var keywords: String?
-    var servingsNounPlural: ServingsNounPlural?
-    var beautyURL: JSONNull?
+    var servingsNounPlural: String?
+    var beautyURL: String?
     var yields: String
     var canonicalID: String
     var facebookPosts: [JSONAny]
-    var servingsNounSingular: ServingsNounSingular?
+    var servingsNounSingular: String?
     var createdAt: Int
     var totalTimeMinutes: Int?
     var videoURL: String?
-    var nutritionVisibility: NutritionVisibility?
+    var nutritionVisibility: String?
     var seoPath: String
     var brand: JSONNull?
     var slug: String
@@ -49,10 +49,10 @@ struct RecipesList: Codable {
     var show: Show
     var description: String
     var thumbnailURL: String
-    var totalTimeTier: TotalTimeTier
+    var totalTimeTier: TotalTimeTier?
     var seoTitle: String?
     var videoID: Int?
-    var language: Language?
+    var language: String?
     var prepTimeMinutes: Int?
     var compilations: [Compilation]
     var numServings: Int
@@ -151,8 +151,8 @@ struct Compilation: Codable {
     var approvedAt: Int
     var aspectRatio: AspectRatio?
     var keywords: JSONNull?
-    var language: Language?
-    var thumbnailAltText: ThumbnailAltText?
+    var language: String?
+    var thumbnailAltText: String?
     var name: String
     var canonicalID: String
     var beautyURL: String?
@@ -196,9 +196,9 @@ enum DraftStatus: String, Codable {
     case published = "published"
 }
 
-enum Language: String, Codable {
-    case eng = "eng"
-}
+//enum Language: String, Codable {
+//    case eng = "eng"
+//}
 
 enum Promotion: String, Codable {
     case full = "full"
@@ -223,14 +223,14 @@ enum ShowName: String, Codable {
     case tastyTastyVegetarian = "Tasty: Tasty Vegetarian"
 }
 
-enum ThumbnailAltText: String, Codable {
-    case broccoliRecipesForHealthyYou = "Broccoli Recipes For Healthy You"
-    case easyToHardPorkRecipes = "Easy To Hard: Pork Recipes"
-    case empty = ""
-    case goodLuckFood = "Good Luck Food"
-    case onePotRecipes = "One-Pot Recipes"
-    case summerBreakRecipesForYourKids = "Summer Break Recipes For Your Kids"
-}
+//enum ThumbnailAltText: String, Codable {
+//    case broccoliRecipesForHealthyYou = "Broccoli Recipes For Healthy You"
+//    case easyToHardPorkRecipes = "Easy To Hard: Pork Recipes"
+//    case empty = ""
+//    case goodLuckFood = "Good Luck Food"
+//    case onePotRecipes = "One-Pot Recipes"
+//    case summerBreakRecipesForYourKids = "Summer Break Recipes For Your Kids"
+//}
 
 // MARK: - Credit
 struct Credit: Codable {
@@ -271,17 +271,17 @@ struct Instruction: Codable {
 
 // MARK: - Nutrition
 struct Nutrition: Codable {
-    var protein: Int
-    var fat: Int
-    var calories: Int
-    var sugar: Int
-    var carbohydrates: Int
-    var fiber: Int
-    var updatedAtString: String
+    var protein: Int?
+    var fat: Int?
+    var calories: Int?
+    var sugar: Int?
+    var carbohydrates: Int?
+    var fiber: Int?
+    var updatedAtString: String?
     var updatedAt: Date? {
           let formatter = DateFormatter()
           formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ" // adjust this format to match your date string
-          return formatter.date(from: updatedAtString)
+        return formatter.date(from: updatedAtString ?? "2023-09-10T12:00:00Z")
       }
 
     enum CodingKeys: String, CodingKey {
@@ -295,9 +295,9 @@ struct Nutrition: Codable {
     }
 }
 
-enum NutritionVisibility: String, Codable {
-    case auto = "auto"
-}
+//enum NutritionVisibility: String, Codable {
+//    case auto = "auto"
+//}
 
 // MARK: - Price
 struct Price: Codable {
@@ -386,7 +386,7 @@ enum RenditionName: String, Codable {
 // MARK: - Section
 struct Section: Codable {
     var components: [Component]
-    var name: JSONNull?
+    var name: String?
     var position: Int
 
     enum CodingKeys: String, CodingKey {
@@ -470,18 +470,18 @@ enum System: String, Codable {
     case none = "none"
 }
 
-enum ServingsNounPlural: String, Codable {
-    case cookies = "cookies"
-    case pancakes = "pancakes"
-    case serving = "serving"
-    case servings = "servings"
-}
-
-enum ServingsNounSingular: String, Codable {
-    case cookie = "cookie"
-    case pancake = "pancake"
-    case serving = "serving"
-}
+//enum ServingsNounPlural: String, Codable {
+//    case cookies = "cookies"
+//    case pancakes = "pancakes"
+//    case serving = "serving"
+//    case servings = "servings"
+//}
+//
+//enum ServingsNounSingular: String, Codable {
+//    case cookie = "cookie"
+//    case pancake = "pancake"
+//    case serving = "serving"
+//}
 
 // MARK: - Tag
 struct Tag: Codable {
@@ -540,11 +540,13 @@ struct TotalTimeTier: Codable {
 enum DisplayTier: String, Codable {
     case under15Minutes = "Under 15 minutes"
     case under30Minutes = "Under 30 minutes"
+    case under45Minutes = "Under 45 minutes"
 }
 
 enum Tier: String, Codable {
     case under15_Minutes = "under_15_minutes"
     case under30_Minutes = "under_30_minutes"
+    case under45_Minutes = "under_45_minutes"
 }
 
 // MARK: - UserRatings

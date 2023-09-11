@@ -80,9 +80,6 @@
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="I1U-Dk-8hb">
                                 <rect key="frame" x="0.0" y="103" width="393" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="iCJ-WA-IOl" id="abY-mE-QaL"/>
-                                </connections>
                             </searchBar>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Lbe-xU-pDt">
                                 <rect key="frame" x="10" y="178" width="373" height="35"/>
@@ -98,8 +95,11 @@
                                                 <integer key="value" value="18"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="timeFilterButtonsPressed:" destination="iCJ-WA-IOl" eventType="touchUpInside" id="xYt-hE-aGM"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ffi-zN-G7z">
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ffi-zN-G7z">
                                         <rect key="frame" x="129.33333333333334" y="0.0" width="114.33333333333334" height="35"/>
                                         <color key="backgroundColor" red="0.92941176469999998" green="0.41568627450000001" blue="0.1960784314" alpha="0.84963541669999998" colorSpace="calibratedRGB"/>
                                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -110,18 +110,24 @@
                                                 <integer key="value" value="18"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="timeFilterButtonsPressed:" destination="iCJ-WA-IOl" eventType="touchUpInside" id="ed8-Gj-vpv"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="65X-we-fZQ">
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="65X-we-fZQ">
                                         <rect key="frame" x="258.66666666666669" y="0.0" width="114.33333333333331" height="35"/>
                                         <color key="backgroundColor" red="0.92941176469999998" green="0.41568627450000001" blue="0.1960784314" alpha="0.84963541669999998" colorSpace="calibratedRGB"/>
                                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Under 1h"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Under 45m"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                 <integer key="value" value="18"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="timeFilterButtonsPressed:" destination="iCJ-WA-IOl" eventType="touchUpInside" id="Ngp-0o-vmD"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -148,6 +154,7 @@
                     <connections>
                         <outlet property="activityIndicator" destination="xVz-mt-vNl" id="zPV-I7-kUK"/>
                         <outlet property="foodTableView" destination="q5z-sF-zmO" id="TDU-TS-kfw"/>
+                        <outlet property="searchBar" destination="I1U-Dk-8hb" id="enx-co-9Bj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uVb-88-Xny" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

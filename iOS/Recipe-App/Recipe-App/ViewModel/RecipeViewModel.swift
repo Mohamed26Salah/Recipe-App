@@ -43,6 +43,7 @@ class RecipeViewModel {
                 onError: { error in
                     self.showLoading.accept(false)
                     self.errorSubject.onNext(error)
+                    print(error)
                 }
             )
             .disposed(by: disposeBag)
@@ -69,6 +70,16 @@ extension RecipeViewModel {
         default:
             // Handle any other cases (optional)
             return .black
+        }
+    }
+    func returnTimeTier(timeTier: DisplayTier) -> String {
+        switch timeTier {
+        case .under15Minutes:
+            return "15min"
+        case .under30Minutes:
+            return "30min"
+        case .under45Minutes:
+            return "45min"
         }
     }
 }
