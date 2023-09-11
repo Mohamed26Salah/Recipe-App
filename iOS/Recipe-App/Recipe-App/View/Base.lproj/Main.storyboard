@@ -435,16 +435,16 @@
                                         <rect key="frame" x="0.0" y="36.666666666666664" width="377" height="21"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Credits :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wB1-d0-5Ad">
-                                                <rect key="frame" x="0.0" y="0.0" width="71.333333333333329" height="21"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="70" height="21"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="KNz-0v-ddY"/>
+                                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="70" id="M11-7u-ThY"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="Inter-Regular_SemiBold" family="Inter" pointSize="15"/>
                                                 <color key="textColor" red="0.0" green="0.56773457159999996" blue="0.62352941179999999" alpha="0.90244791670000002" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mohamed Salah / Yasser Miu Long" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mx4-iq-VtA">
-                                                <rect key="frame" x="71.333333333333343" y="0.0" width="305.66666666666663" height="21"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rie McClenny" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mx4-iq-VtA">
+                                                <rect key="frame" x="70" y="0.0" width="307" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -523,7 +523,7 @@
                                                 <string key="text">"This chicken salad is a lunchtime delight! Packed with creamy avocado, tender chicken, and crunchy veggies, it's a healthy and satisfying meal that won't weigh you down. Tossed in a tangy yogurt dressing with a hint of spice, it's a flavor explosion that's perfect for a light meal."
 </string>
                                                 <fontDescription key="fontDescription" name="Inter-Regular_Medium" family="Inter" pointSize="15"/>
-                                                <color key="textColor" red="0.62352941176470589" green="0.6470588235294118" blue="0.75294117647058822" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="textColor" white="0.41412848395270269" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
@@ -614,7 +614,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="bwv-y7-IuU">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="bwv-y7-IuU">
                                 <rect key="frame" x="0.0" y="346" width="377" height="379"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <connections>
@@ -630,13 +630,23 @@
                                     <constraint firstAttribute="width" constant="16" id="yf1-VO-kVi"/>
                                 </constraints>
                             </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fvt-sM-2rM">
+                                <rect key="frame" x="16" y="342" width="345" height="2"/>
+                                <color key="backgroundColor" red="0.81568627449999997" green="0.85490196080000003" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="2" id="Yoe-vF-i9e"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="n4a-V2-wkQ"/>
                         <color key="backgroundColor" white="0.9892974028716216" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="fvt-sM-2rM" firstAttribute="leading" secondItem="n4a-V2-wkQ" secondAttribute="leading" constant="16" id="0Ud-Bd-L6J"/>
                             <constraint firstItem="bwv-y7-IuU" firstAttribute="leading" secondItem="BWx-ta-idT" secondAttribute="leading" id="4jb-Yz-hiG"/>
                             <constraint firstItem="ixG-dV-3hb" firstAttribute="top" secondItem="Tfr-gQ-Xva" secondAttribute="top" constant="12.000000000000002" id="7sT-mY-jsR"/>
                             <constraint firstItem="BuM-Tq-bTd" firstAttribute="top" secondItem="Tfr-gQ-Xva" secondAttribute="top" constant="9" id="9pO-5l-aBs"/>
+                            <constraint firstItem="fvt-sM-2rM" firstAttribute="top" secondItem="BWx-ta-idT" secondAttribute="bottom" constant="16" id="Bjz-bc-TEJ"/>
+                            <constraint firstItem="n4a-V2-wkQ" firstAttribute="trailing" secondItem="fvt-sM-2rM" secondAttribute="trailing" constant="16" id="DLO-J7-s03"/>
                             <constraint firstItem="bwv-y7-IuU" firstAttribute="top" secondItem="BWx-ta-idT" secondAttribute="bottom" constant="20" id="P4N-FS-MyP"/>
                             <constraint firstItem="BuM-Tq-bTd" firstAttribute="leading" secondItem="ixG-dV-3hb" secondAttribute="trailing" constant="1.6699999999999999" id="WCi-pt-wSY"/>
                             <constraint firstAttribute="bottomMargin" secondItem="bwv-y7-IuU" secondAttribute="bottom" constant="-34" id="Y8Z-e4-4SK"/>
@@ -654,6 +664,7 @@
                         <outlet property="ingredientsTableView" destination="BWx-ta-idT" id="BDe-e8-oEw"/>
                         <outlet property="instructionsTableView" destination="bwv-y7-IuU" id="Dam-0Z-Ylt"/>
                         <outlet property="numberOfItemsLabel" destination="Mky-yh-1xz" id="niw-pt-fAo"/>
+                        <outlet property="timeForRecipeLabel" destination="BuM-Tq-bTd" id="IwD-7h-ulH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RBb-cS-g8k" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

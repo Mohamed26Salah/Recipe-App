@@ -133,6 +133,7 @@ extension HomeVC {
                 self.foodTableView.deselectRow(at: self.foodTableView.indexPathForSelectedRow!, animated: true)
                 let foodVC = self.storyboard?.instantiateViewController(identifier: K.ViewsControllers.FoodDetailsVC) as! FoodDetailsVC
                 foodVC.recipeDetails = recipeObject
+                foodVC.recipeVC = recipeVC
                 self.navigationController?.pushViewController(foodVC, animated: true)
             }
             .disposed(by: disposeBag)

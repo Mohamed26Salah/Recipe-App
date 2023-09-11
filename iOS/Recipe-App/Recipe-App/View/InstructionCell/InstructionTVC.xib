@@ -51,6 +51,10 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="currentStepLabel" destination="kee-db-Kth" id="h3W-0P-gXL"/>
+                <outlet property="instructionLabel" destination="nr2-fL-iIS" id="fmp-YZ-utp"/>
+            </connections>
             <point key="canvasLocation" x="170.99236641221373" y="32.74647887323944"/>
         </tableViewCell>
     </objects>

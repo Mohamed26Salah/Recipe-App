@@ -9,6 +9,9 @@ import UIKit
 
 class InstructionTVC: UITableViewCell {
 
+    @IBOutlet weak var currentStepLabel: UILabel!
+    @IBOutlet weak var instructionLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

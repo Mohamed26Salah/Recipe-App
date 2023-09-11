@@ -21,7 +21,8 @@ class FoodDetailsVC: UIViewController {
     @IBOutlet weak var ingredientsView: UIView!
     @IBOutlet weak var detailsView: UIView!
     var recipeDetails: RecipesList!
-    let recipeVC = RecipeViewModel()
+    var recipeVC: RecipeViewModel!
+//    let recipeVC = RecipeViewModel()
     var recipeVideoQualityList: [VideoQualityOption]!
     override func viewDidLoad() {
         super.viewDidLoad()
