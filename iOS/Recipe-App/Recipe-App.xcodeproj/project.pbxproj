@@ -18,6 +18,7 @@
 		AB6C7E952AAE4D51000AD911 /* RecipeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6C7E942AAE4D51000AD911 /* RecipeViewModel.swift */; };
 		AB6C7E982AAE587C000AD911 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = AB6C7E972AAE587C000AD911 /* SDWebImageSwiftUI */; };
 		AB6C7E9B2AAF4DB8000AD911 /* RxDataSources in Frameworks */ = {isa = PBXBuildFile; productRef = AB6C7E9A2AAF4DB8000AD911 /* RxDataSources */; };
+		AB6C7E9D2AAF8C47000AD911 /* VideoQualityOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6C7E9C2AAF8C47000AD911 /* VideoQualityOption.swift */; };
 		AB80666C2AAE119B004C3843 /* DetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB80666B2AAE119B004C3843 /* DetailsVC.swift */; };
 		AB8066702AAE1749004C3843 /* NutritionTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB80666E2AAE1749004C3843 /* NutritionTVC.swift */; };
 		AB8066712AAE1749004C3843 /* NutritionTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB80666F2AAE1749004C3843 /* NutritionTVC.xib */; };
@@ -87,6 +88,7 @@
 		AB6C7E902AAE39C7000AD911 /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 		AB6C7E922AAE3EB5000AD911 /* Recipes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipes.swift; sourceTree = "<group>"; };
 		AB6C7E942AAE4D51000AD911 /* RecipeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewModel.swift; sourceTree = "<group>"; };
+		AB6C7E9C2AAF8C47000AD911 /* VideoQualityOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoQualityOption.swift; sourceTree = "<group>"; };
 		AB8066692AADF97F004C3843 /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
 		AB80666A2AAE0791004C3843 /* Inter-VariableFont_slnt,wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-VariableFont_slnt,wght.ttf"; sourceTree = "<group>"; };
 		AB80666B2AAE119B004C3843 /* DetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsVC.swift; sourceTree = "<group>"; };
@@ -272,6 +274,7 @@
 			isa = PBXGroup;
 			children = (
 				ABDEA5F82AAC79F8000C957A /* Parser */,
+				AB6C7E9C2AAF8C47000AD911 /* VideoQualityOption.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -518,6 +521,7 @@
 				ABDEA6152AACB3B3000C957A /* HomeVC.swift in Sources */,
 				ABB588002AAD082200676EEF /* UIImage + Extenstion.swift in Sources */,
 				ABB587F12AACDDFC00676EEF /* UIView + Extenstion.swift in Sources */,
+				AB6C7E9D2AAF8C47000AD911 /* VideoQualityOption.swift in Sources */,
 				ABF80E712AADF3F7000ACB77 /* InstructionTVC.swift in Sources */,
 				AB6C7E912AAE39C7000AD911 /* Test.swift in Sources */,
 				AB6C7E952AAE4D51000AD911 /* RecipeViewModel.swift in Sources */,

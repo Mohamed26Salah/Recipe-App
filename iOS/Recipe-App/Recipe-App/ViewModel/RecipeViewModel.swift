@@ -85,4 +85,45 @@ extension RecipeViewModel {
             return "45min"
         }
     }
+    private func sortVideoQualityArrayByWidth(videoQualityArray: [VideoQualityOption]) -> [VideoQualityOption] {
+        let sortedArray = videoQualityArray.sorted {
+            if let width1 = Int($0.qualityLabel), let width2 = Int($1.qualityLabel) {
+                return width1 > width2
+            }
+            return false
+        }
+        return sortedArray
+    }
+
+   private func removeRedundantVideoQualityOptions(videoQualityArray: [VideoQualityOption]) -> [VideoQualityOption] {
+        var uniqueWidths = Set<String>()
+        var filteredArray = [VideoQualityOption]()
+
+        for option in videoQualityArray {
+            if uniqueWidths.insert(option.qualityLabel).inserted {
+                filteredArray.append(option)
+            }
+        }
+
+        return filteredArray
+    }
+
+
+    func videoQualityArray(recipe: RecipesList) -> [VideoQualityOption] {
+        var videoQualityArray = [VideoQualityOption]()
+        for rendition in recipe.renditions {
+            if let url = URL(string: rendition.url) {
+                if rendition.width != 1080 {
+                    videoQualityArray.append(VideoQualityOption(qualityLabel: String(rendition.width), videoURL: url))
+                } else {
+                    if let originalVideoUrl = recipe.originalVideoURL {
+                        videoQualityArray.append(VideoQualityOption(qualityLabel: String(rendition.width), videoURL: URL(string: originalVideoUrl)!))
+                    }
+                }
+            }
+        }
+        let filteredArray = removeRedundantVideoQualityOptions(videoQualityArray: videoQualityArray)
+        let sortedArray = sortVideoQualityArrayByWidth(videoQualityArray: filteredArray)
+        return sortedArray
+    }
 }

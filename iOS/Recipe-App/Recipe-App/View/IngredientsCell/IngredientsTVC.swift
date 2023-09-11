@@ -9,6 +9,7 @@ import UIKit
 
 class IngredientsTVC: UITableViewCell {
 
+    @IBOutlet weak var ingredientLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

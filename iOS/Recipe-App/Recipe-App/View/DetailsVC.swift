@@ -14,12 +14,18 @@ class DetailsVC: UIViewController {
     @IBOutlet weak var lastUpdatedLabel: UILabel!
     @IBOutlet weak var recipeDescriptionLabel: UILabel!
     @IBOutlet weak var detailsTableView: UITableView!
+    var recipeDetails: RecipesList!
     override func viewDidLoad() {
         super.viewDidLoad()
         detailsTableView.register(UINib(nibName: K.cellsResuable.NutritionTVC, bundle: nil), forCellReuseIdentifier: K.cellsResuable.NutritionTVC)
-        // Do any additional setup after loading the view.
-    }
+        NotificationCenter.default.addObserver(self, selector: #selector(handleRecipeDetails(_:)), name: NSNotification.Name("RecipeDetailsNotification"), object: nil)
 
+    }
+    @objc func handleRecipeDetails(_ notification: Notification) {
+        if let recipe = notification.object as? RecipesList {
+            recipeDetails = recipe
+        }
+    }
 }
 extension DetailsVC: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

@@ -6,19 +6,30 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
+import RxRelay
 
 class IngredientsVC: UIViewController {
     
     @IBOutlet weak var numberOfItemsLabel: UILabel!
     @IBOutlet weak var ingredientsTableView: UITableView!
     @IBOutlet weak var instructionsTableView: UITableView!
+    var recipeDetails: RecipesList!
+//    var recipeDetails = PublishRelay<RecipesList>.init()
     override func viewDidLoad() {
         super.viewDidLoad()
         ingredientsTableView.register(UINib(nibName: K.cellsResuable.IngredientsTVC, bundle: nil), forCellReuseIdentifier: K.cellsResuable.IngredientsTVC)
         instructionsTableView.register(UINib(nibName: K.cellsResuable.InstructionTVC, bundle: nil), forCellReuseIdentifier: K.cellsResuable.InstructionTVC)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleRecipeDetails(_:)), name: NSNotification.Name("RecipeDetailsNotification"), object: nil)
+   
         
     }
-    
+    @objc func handleRecipeDetails(_ notification: Notification) {
+        if let recipe = notification.object as? RecipesList {
+            recipeDetails = recipe
+        }
+    }
     
 }
 extension IngredientsVC: UITableViewDelegate, UITableViewDataSource {

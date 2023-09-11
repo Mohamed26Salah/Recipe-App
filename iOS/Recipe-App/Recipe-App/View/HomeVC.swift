@@ -131,9 +131,9 @@ extension HomeVC {
             .subscribe { [weak self] recipeObject in
                 guard let self = self else { return }
                 self.foodTableView.deselectRow(at: self.foodTableView.indexPathForSelectedRow!, animated: true)
-                let foodVc = self.storyboard?.instantiateViewController(identifier: K.ViewsControllers.FoodDetailsVC) as! FoodDetailsVC
-                foodVc.recipeDetails = recipeObject
-                self.navigationController?.pushViewController(foodVc, animated: true)
+                let foodVC = self.storyboard?.instantiateViewController(identifier: K.ViewsControllers.FoodDetailsVC) as! FoodDetailsVC
+                foodVC.recipeDetails = recipeObject
+                self.navigationController?.pushViewController(foodVC, animated: true)
             }
             .disposed(by: disposeBag)
     }
