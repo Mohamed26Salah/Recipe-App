@@ -8,7 +8,10 @@
 import RxSwift
 import RxCocoa
 import RxRelay
+import RxDataSources
 import UIKit
+
+typealias RecipeSectionModel = AnimatableSectionModel<String, RecipesList>
 
 class RecipeViewModel {
     let apiManager: APIClientProtocol

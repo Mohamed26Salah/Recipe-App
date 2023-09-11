@@ -7,6 +7,7 @@
 
 import Foundation
 import OptionallyDecodable
+import RxDataSources
 
 // MARK: - Recipes
 struct Recipes: Codable {
@@ -72,7 +73,7 @@ struct RecipesList: Codable {
     var approvedAt: Int
     var isOneTop: Bool
     var topics: [Topic]
-    var promotion: Promotion?
+    var promotion: String?
 
     enum CodingKeys: String, CodingKey {
         case id = "id"
@@ -143,7 +144,7 @@ struct Compilation: Codable {
     var videoURL: String
     var slug: String
     var id: Int
-    var promotion: Promotion?
+    var promotion: String?
     var country: Country?
     var isShoppable: Bool
     var show: [Show]
@@ -200,10 +201,10 @@ enum DraftStatus: String, Codable {
 //    case eng = "eng"
 //}
 
-enum Promotion: String, Codable {
-    case full = "full"
-    case partial = "partial"
-}
+//enum Promotion: String, Codable {
+//    case full = "full"
+//    case partial = "partial"
+//}
 
 // MARK: - Show
 struct Show: Codable {
@@ -810,5 +811,12 @@ class JSONAny: Codable {
             var container = encoder.singleValueContainer()
             try JSONAny.encode(to: &container, value: self.value)
         }
+    }
+}
+extension RecipesList: IdentifiableType, Equatable {
+    var identity: Int { return id }
+    
+    static func ==(lhs: RecipesList, rhs: RecipesList) -> Bool {
+        return lhs.id == rhs.id
     }
 }

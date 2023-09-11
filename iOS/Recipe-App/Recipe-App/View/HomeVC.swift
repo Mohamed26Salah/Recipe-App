@@ -9,21 +9,26 @@ import UIKit
 import RxSwift
 import RxCocoa
 import SDWebImage
+import RxDataSources
+
+
 class HomeVC: BasicVC {
 
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var foodTableView: UITableView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-    
+
 //    let disposeBag = DisposeBag()
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
         foodTableView.register(UINib(nibName: K.cellsResuable.FoodTVC, bundle: nil), forCellReuseIdentifier: K.cellsResuable.FoodTVC)
-        showRecipesData()
+//        showRecipesData()
         handleLoadingIndicator()
         search()
         recipeSelected()
+        bindTableView()
+
     }
     
     @IBAction func timeFilterButtonsPressed(_ sender: UIButton) {
@@ -46,6 +51,39 @@ class HomeVC: BasicVC {
     }
 }
 extension HomeVC {
+    func bindTableView() {
+        let dataSource = RxTableViewSectionedAnimatedDataSource<RecipeSectionModel>(
+            configureCell: { [weak self]  dataSource, tableView, indexPath, recipe in
+                guard let self = self else {
+                    return UITableViewCell()
+                }
+                let cell = tableView.dequeueReusableCell(withIdentifier: K.cellsResuable.FoodTVC, for: indexPath) as! FoodTVC
+                cell.nameLabel.text = recipe.name
+                let ratingMap = recipeVC.mapValue(fromRange: 0.0...1.0, toRange: 1.0...10.0, value: recipe.userRatings.score)
+                cell.ratingLabel.text = String(format: "%.1f", ratingMap)
+                cell.ratingBackgroundView.backgroundColor = recipeVC.ratingColor(rating: ratingMap)
+                if let url = URL(string: recipe.thumbnailURL) {
+                    cell.recipeImage.sd_setImage(with: url)
+                }
+                cell.timeNeededLabel.text = recipeVC.returnTimeTier(timeTier: recipe.totalTimeTier?.displayTier ?? .under30Minutes)
+                cell.firstIngredientLabel.text = recipe.tags[0].name
+                cell.secoundIngredientLabel.text = recipe.tags[1].name
+                cell.thirdIngredientLabel.text = recipe.tags[2].name
+                return cell
+            }
+        )
+//Using RxDataSources, instead of passing an array of items to the table or collection view, you pass an array of section models. The section model defines both what goes in the section header (if any), and the data model of each item of that section.
+// DataSource Expects an array of sections, each section carry it items
+// here I just have an array with one section and no title.
+        recipeVC.recipesList
+            .map { recipes in
+                [RecipeSectionModel(model: "", items: recipes)]
+            }
+            .bind(to: foodTableView.rx.items(dataSource: dataSource))
+            .disposed(by: disposeBag)
+    }
+
+
     func showRecipesData() {
         recipeVC.recipesList
             .bind(to: foodTableView
