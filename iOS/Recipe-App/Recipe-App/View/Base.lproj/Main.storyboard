@@ -77,7 +77,7 @@
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <sections/>
                             </tableView>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="I1U-Dk-8hb">
+                            <searchBar contentMode="redraw" placeholder="Yummy!" translatesAutoresizingMaskIntoConstraints="NO" id="I1U-Dk-8hb">
                                 <rect key="frame" x="0.0" y="103" width="393" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
