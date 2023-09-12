@@ -10,12 +10,12 @@ import RxSwift
 import RxCocoa
 
 class BasicVC: UIViewController {
-    let recipeVC = RecipeViewModel()
+   static let recipeVC = RecipeViewModel()
     let disposeBag = DisposeBag()
     override func viewDidLoad() {
         super.viewDidLoad()
         setupBaseUI()
-        recipeVC.getRecipes()
+        BasicVC.recipeVC.getRecipes()
         handleErrors()
     }
 }
@@ -27,7 +27,7 @@ extension BasicVC {
         navigationItem.titleView = imageView
     }
     func handleErrors() {
-        recipeVC.errorSubject
+        BasicVC.recipeVC.errorSubject
             .subscribe { error in
                 self.show(messageAlert: "Error", message: error.localizedDescription)
             }

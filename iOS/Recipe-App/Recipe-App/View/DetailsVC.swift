@@ -14,7 +14,7 @@ class DetailsVC: UIViewController {
     @IBOutlet weak var lastUpdatedLabel: UILabel!
     @IBOutlet weak var recipeDescriptionLabel: UILabel!
     @IBOutlet weak var detailsTableView: UITableView!
-    var recipeDetails: RecipesList!
+    var recipeDetails: RecipeObject!
     var nutritionArray = [[String:Int?]]()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +23,7 @@ class DetailsVC: UIViewController {
 
     }
     @objc func handleRecipeDetails(_ notification: Notification) {
-        if let recipe = notification.object as? RecipesList {
+        if let recipe = notification.object as? RecipeObject {
             recipeDetails = recipe
             fillUIData()
             detailsTableView.reloadData()

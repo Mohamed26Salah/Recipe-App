@@ -16,7 +16,7 @@ class IngredientsVC: UIViewController {
     @IBOutlet weak var timeForRecipeLabel: UILabel!
     @IBOutlet weak var ingredientsTableView: UITableView!
     @IBOutlet weak var instructionsTableView: UITableView!
-    var recipeDetails: RecipesList!
+    var recipeDetails: RecipeObject!
     var stepColorPattern = true
     //    var recipeDetails = PublishRelay<RecipesList>.init()
     override func viewDidLoad() {
@@ -27,7 +27,7 @@ class IngredientsVC: UIViewController {
         
     }
     @objc func handleRecipeDetails(_ notification: Notification) {
-        if let recipe = notification.object as? RecipesList {
+        if let recipe = notification.object as? RecipeObject {
             recipeDetails = recipe
             fillUIData()
             ingredientsTableView.reloadData()

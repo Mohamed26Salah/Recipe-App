@@ -11,7 +11,8 @@ import RxRelay
 import RxDataSources
 import UIKit
 
-typealias RecipeSectionModel = AnimatableSectionModel<String, RecipesList>
+typealias RecipeSectionModel = AnimatableSectionModel<String, RecipeObject>
+typealias LocalRecipeSectionModel = AnimatableSectionModel<String, RecipeObject>
 
 class RecipeViewModel {
     let apiManager: APIClientProtocol
@@ -21,7 +22,8 @@ class RecipeViewModel {
     private let disposeBag = DisposeBag()
     var recipesModel: Recipes?
     //out
-    var recipesList = PublishRelay<[RecipesList]>.init()
+    var recipesList = PublishRelay<[RecipeObject]>.init()
+    var localRecipesList = BehaviorRelay<[RecipeObject]>(value: RecipeDataManager.shared().getAllRecipes())
     var showLoading = BehaviorRelay<Bool>(value: false)
     var errorSubject = PublishSubject<Error>()
 
@@ -109,7 +111,7 @@ extension RecipeViewModel {
     }
 
 
-    func videoQualityArray(recipe: RecipesList) -> [VideoQualityOption] {
+    func videoQualityArray(recipe: RecipeObject) -> [VideoQualityOption] {
         var videoQualityArray = [VideoQualityOption]()
         for rendition in recipe.renditions {
             if let url = URL(string: rendition.url) {

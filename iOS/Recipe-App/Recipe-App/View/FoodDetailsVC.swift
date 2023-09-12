@@ -20,7 +20,7 @@ class FoodDetailsVC: UIViewController {
     @IBOutlet weak var detailsButton: UIButton!
     @IBOutlet weak var ingredientsView: UIView!
     @IBOutlet weak var detailsView: UIView!
-    var recipeDetails: RecipesList!
+    var recipeDetails: RecipeObject!
     var recipeVC: RecipeViewModel!
 //    let recipeVC = RecipeViewModel()
     var recipeVideoQualityList: [VideoQualityOption]!
@@ -103,8 +103,8 @@ extension FoodDetailsVC {
         pickerView.translatesAutoresizingMaskIntoConstraints = false
         pickerView.centerXAnchor.constraint(equalTo: alertController.view.centerXAnchor).isActive = true
         pickerView.topAnchor.constraint(equalTo: alertController.view.topAnchor, constant: 20).isActive = true
-
         present(alertController, animated: true, completion: nil)
+        
     }
 
     func playVideo(with qualityOption: VideoQualityOption) {

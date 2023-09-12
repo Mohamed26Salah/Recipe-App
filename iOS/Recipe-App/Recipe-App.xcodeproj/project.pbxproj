@@ -23,6 +23,11 @@
 		AB80666C2AAE119B004C3843 /* DetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB80666B2AAE119B004C3843 /* DetailsVC.swift */; };
 		AB8066702AAE1749004C3843 /* NutritionTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB80666E2AAE1749004C3843 /* NutritionTVC.swift */; };
 		AB8066712AAE1749004C3843 /* NutritionTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB80666F2AAE1749004C3843 /* NutritionTVC.xib */; };
+		ABB42BB22AB0890D00263E41 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB42BB12AB0890D00263E41 /* Recipe.swift */; };
+		ABB42BB52AB09A4F00263E41 /* Recipe-Local.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ABB42BB32AB09A4F00263E41 /* Recipe-Local.xcdatamodeld */; };
+		ABB42BB82AB0ACEB00263E41 /* RecipeDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB42BB72AB0ACEB00263E41 /* RecipeDataManager.swift */; };
+		ABB42BBB2AB0B7BB00263E41 /* Recipe+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB42BB92AB0B7BB00263E41 /* Recipe+CoreDataClass.swift */; };
+		ABB42BBC2AB0B7BB00263E41 /* Recipe+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB42BBA2AB0B7BB00263E41 /* Recipe+CoreDataProperties.swift */; };
 		ABB587F12AACDDFC00676EEF /* UIView + Extenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB587F02AACDDFC00676EEF /* UIView + Extenstion.swift */; };
 		ABB587F92AACECA700676EEF /* UIViewController + Extenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB587F82AACECA700676EEF /* UIViewController + Extenstion.swift */; };
 		ABB587FC2AACFF9E00676EEF /* FoodDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB587FA2AACFF9E00676EEF /* FoodDetailsVC.swift */; };
@@ -98,6 +103,11 @@
 		AB80666F2AAE1749004C3843 /* NutritionTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NutritionTVC.xib; sourceTree = "<group>"; };
 		ABAABAF82AAD2B8B009E5301 /* Poppins-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
 		ABAABAF92AAD2BDB009E5301 /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
+		ABB42BB12AB0890D00263E41 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
+		ABB42BB42AB09A4F00263E41 /* Recipe-Local.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Recipe-Local.xcdatamodel"; sourceTree = "<group>"; };
+		ABB42BB72AB0ACEB00263E41 /* RecipeDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDataManager.swift; sourceTree = "<group>"; };
+		ABB42BB92AB0B7BB00263E41 /* Recipe+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Recipe+CoreDataClass.swift"; sourceTree = "<group>"; };
+		ABB42BBA2AB0B7BB00263E41 /* Recipe+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Recipe+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		ABB587F02AACDDFC00676EEF /* UIView + Extenstion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Extenstion.swift"; sourceTree = "<group>"; };
 		ABB587F82AACECA700676EEF /* UIViewController + Extenstion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Extenstion.swift"; sourceTree = "<group>"; };
 		ABB587FA2AACFF9E00676EEF /* FoodDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodDetailsVC.swift; sourceTree = "<group>"; };
@@ -184,6 +194,17 @@
 			path = NutritionCell;
 			sourceTree = "<group>";
 		};
+		ABB42BB62AB09A5E00263E41 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				ABB42BB32AB09A4F00263E41 /* Recipe-Local.xcdatamodeld */,
+				ABB42BB72AB0ACEB00263E41 /* RecipeDataManager.swift */,
+				ABB42BB92AB0B7BB00263E41 /* Recipe+CoreDataClass.swift */,
+				ABB42BBA2AB0B7BB00263E41 /* Recipe+CoreDataProperties.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
 		ABB587EF2AACDDE100676EEF /* Extenstions */ = {
 			isa = PBXGroup;
 			children = (
@@ -227,6 +248,7 @@
 				ABB587EF2AACDDE100676EEF /* Extenstions */,
 				ABDEA5F52AAC78C2000C957A /* Networking */,
 				ABDEA6032AAC8C8F000C957A /* Resources */,
+				ABB42BB62AB09A5E00263E41 /* CoreData */,
 				ABDEA5CA2AAC73DC000C957A /* Assets.xcassets */,
 				ABDEA5CF2AAC73DC000C957A /* Info.plist */,
 				AB6C7E902AAE39C7000AD911 /* Test.swift */,
@@ -302,6 +324,7 @@
 			isa = PBXGroup;
 			children = (
 				AB6C7E922AAE3EB5000AD911 /* Recipes.swift */,
+				ABB42BB12AB0890D00263E41 /* Recipe.swift */,
 			);
 			path = Parser;
 			sourceTree = "<group>";
@@ -535,6 +558,8 @@
 				ABF80E6D2AADF208000ACB77 /* IngredientsVC.swift in Sources */,
 				AB8066702AAE1749004C3843 /* NutritionTVC.swift in Sources */,
 				AB80666C2AAE119B004C3843 /* DetailsVC.swift in Sources */,
+				ABB42BBC2AB0B7BB00263E41 /* Recipe+CoreDataProperties.swift in Sources */,
+				ABB42BB82AB0ACEB00263E41 /* RecipeDataManager.swift in Sources */,
 				ABDEA6192AACB441000C957A /* BasicVC.swift in Sources */,
 				ABB587FC2AACFF9E00676EEF /* FoodDetailsVC.swift in Sources */,
 				ABDEA5C22AAC73DB000C957A /* AppDelegate.swift in Sources */,
@@ -543,8 +568,11 @@
 				ABDEA6012AAC8BDD000C957A /* SplashVC.swift in Sources */,
 				AB6C7E932AAE3EB5000AD911 /* Recipes.swift in Sources */,
 				ABDEA61D2AACBE52000C957A /* FoodTVC.swift in Sources */,
+				ABB42BB22AB0890D00263E41 /* Recipe.swift in Sources */,
 				ABDEA6172AACB3CD000C957A /* FavouritesVC.swift in Sources */,
+				ABB42BBB2AB0B7BB00263E41 /* Recipe+CoreDataClass.swift in Sources */,
 				ABB587F92AACECA700676EEF /* UIViewController + Extenstion.swift in Sources */,
+				ABB42BB52AB09A4F00263E41 /* Recipe-Local.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -721,7 +749,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 3Q8FDFK3WX;
+				DEVELOPMENT_TEAM = URTYG2PATZ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Recipe-App/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -749,7 +777,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 3Q8FDFK3WX;
+				DEVELOPMENT_TEAM = URTYG2PATZ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Recipe-App/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -964,6 +992,19 @@
 			productName = OptionallyDecodable;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		ABB42BB32AB09A4F00263E41 /* Recipe-Local.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				ABB42BB42AB09A4F00263E41 /* Recipe-Local.xcdatamodel */,
+			);
+			currentVersion = ABB42BB42AB09A4F00263E41 /* Recipe-Local.xcdatamodel */;
+			path = "Recipe-Local.xcdatamodeld";
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = ABDEA5B62AAC73DB000C957A /* Project object */;
 }

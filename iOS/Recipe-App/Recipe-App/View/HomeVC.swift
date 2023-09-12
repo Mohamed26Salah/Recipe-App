@@ -13,37 +13,37 @@ import RxDataSources
 
 
 class HomeVC: BasicVC {
-
+    
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var foodTableView: UITableView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-
-//    let disposeBag = DisposeBag()
+    let recipeVC = HomeVC.recipeVC
+    //    let disposeBag = DisposeBag()
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
         foodTableView.register(UINib(nibName: K.cellsResuable.FoodTVC, bundle: nil), forCellReuseIdentifier: K.cellsResuable.FoodTVC)
-//        showRecipesData()
+        //        showRecipesData()
         handleLoadingIndicator()
         search()
         recipeSelected()
         bindTableView()
-
     }
     
     @IBAction func timeFilterButtonsPressed(_ sender: UIButton) {
         switch sender.tag {
         case 0:
             recipeVC.getRecipes(tag: "under_15_minutes")
-            recipeVC.recipesList.accept([RecipesList]())
+            //Empty the Array for animation
+            recipeVC.recipesList.accept([RecipeObject]())
             break
         case 1:
             recipeVC.getRecipes(tag: "under_30_minutes")
-            recipeVC.recipesList.accept([RecipesList]())
+            recipeVC.recipesList.accept([RecipeObject]())
             break
         case 2:
             recipeVC.getRecipes(tag: "under_45_minutes")
-            recipeVC.recipesList.accept([RecipesList]())
+            recipeVC.recipesList.accept([RecipeObject]())
             break
         default:
             recipeVC.getRecipes()
@@ -69,12 +69,21 @@ extension HomeVC {
                 cell.firstIngredientLabel.text = recipe.tags[0].name
                 cell.secoundIngredientLabel.text = recipe.tags[1].name
                 cell.thirdIngredientLabel.text = recipe.tags[2].name
+                cell.saveButton.isChecked = RecipeDataManager.shared().isRecipeFavorited(id: Int32(recipe.id))
+                cell.onFavButtonTapped = {
+                    if cell.saveButton.isChecked {
+                        RecipeDataManager.shared().createRecipe(recipe: recipe)
+                    } else {
+                        RecipeDataManager.shared().deleteRecipe(recipe: recipe)
+                    }
+                    self.recipeVC.localRecipesList.accept(RecipeDataManager.shared().getAllRecipes())
+                }
                 return cell
             }
         )
-//Using RxDataSources, instead of passing an array of items to the table or collection view, you pass an array of section models. The section model defines both what goes in the section header (if any), and the data model of each item of that section.
-// DataSource Expects an array of sections, each section carry it items
-// here I just have an array with one section and no title.
+        //Using RxDataSources, instead of passing an array of items to the table or collection view, you pass an array of section models. The section model defines both what goes in the section header (if any), and the data model of each item of that section.
+        // DataSource Expects an array of sections, each section carry it items
+        // here I just have an array with one section and no title.
         recipeVC.recipesList
             .map { recipes in
                 [RecipeSectionModel(model: "", items: recipes)]
@@ -82,8 +91,8 @@ extension HomeVC {
             .bind(to: foodTableView.rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)
     }
-
-
+    
+    
     func showRecipesData() {
         recipeVC.recipesList
             .bind(to: foodTableView
@@ -103,6 +112,9 @@ extension HomeVC {
                     cell.firstIngredientLabel.text = recipe.tags[0].name
                     cell.secoundIngredientLabel.text = recipe.tags[1].name
                     cell.thirdIngredientLabel.text = recipe.tags[2].name
+                    cell.onFavButtonTapped = {
+                        print("Tappped")
+                    }
                 }
                 .disposed(by: disposeBag)
         recipeVC.recipesList
@@ -127,7 +139,7 @@ extension HomeVC {
     }
     func recipeSelected() {
         foodTableView
-            .rx.modelSelected(RecipesList.self)
+            .rx.modelSelected(RecipeObject.self)
             .subscribe { [weak self] recipeObject in
                 guard let self = self else { return }
                 self.foodTableView.deselectRow(at: self.foodTableView.indexPathForSelectedRow!, animated: true)
@@ -138,7 +150,7 @@ extension HomeVC {
             }
             .disposed(by: disposeBag)
     }
-
+    
 }
 extension HomeVC {
     func setupUI() {
