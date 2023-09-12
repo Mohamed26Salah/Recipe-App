@@ -69,7 +69,7 @@ class RecipeDataManager {
         let newItem = Recipe(context: context)
         newItem.id = Int32(recipe.id)
         newItem.originalVideoURL = recipe.originalVideoURL
-        newItem.country = recipe.country?.rawValue
+        newItem.country = recipe.country
         newItem.instructions = convertItemsToStringArray(recipe.instructions) { $0.displayText }
         newItem.userRatings = recipe.userRatings.score
         newItem.name = recipe.name
@@ -81,7 +81,7 @@ class RecipeDataManager {
         newItem.updatedAt = Int32(recipe.updatedAt)
         newItem.section = convertItemsToStringArray(recipe.sections[0].components) { $0.rawText }
         newItem.tags = convertItemsToStringArray(recipe.tags) { $0.name }
-        newItem.credits = convertItemsToStringArray(recipe.credits) { $0.name ?? "" }
+        newItem.credits = convertItemsToStringArray(recipe.credits) { $0.name ?? "N/A" }
         newItem.rendition = convertRenditionToDictionary(renditons: recipe.renditions)
         
         
@@ -102,16 +102,20 @@ class RecipeDataManager {
             let sections = [convertSections(recipe.section)]
             let tags = convertStringsToTags(recipe.tags)
             let credits = convertStringsToCredits(recipe.credits)
-
+            let displayTier = retrievTimeTier(timeTier: recipe.totalTimeTier ?? "")
             return RecipeObject(
                 id: Int(recipe.id),
+                originalVideoURL: recipe.originalVideoURL,
+                country: recipe.country,
                 instructions: instructions,
                 userRatings: UserRatings(score: Double(recipe.userRatings)),
                 name: recipe.name ?? "N/A",
                 createdAt: Int(recipe.createdAt),
                 nutrition: nutrition,
-                description: recipe.description,
-                thumbnailURL: recipe.thumbnailURL ?? "",
+                description: recipe.recipeDescription ?? "N/A",
+                thumbnailURL: recipe.thumbnailURL ?? "N/A",
+                totalTimeTier: TotalTimeTier(displayTier: displayTier),
+                language: recipe.language,
                 updatedAt: Int(recipe.updatedAt),
                 renditions: convertDictionaryToRenditions(recipe.rendition ?? [["":""]]),
                 sections: sections,
@@ -164,20 +168,38 @@ class RecipeDataManager {
         return strings.compactMap { transform($0) }
     }
     func convertRenditionToDictionary(renditons: [Rendition]) -> [[String:String]] {
+        print(renditons.map { element in
+            ["qualityLabel":String(element.width), "videoURL":element.url]
+        })
         return renditons.map { element in
             ["qualityLabel":String(element.width), "videoURL":element.url]
         }
     }
-    func convertDictionaryToRendition(_ dict: [String: Any]) -> Rendition? {
-        guard let videoURL = dict["videoURL"] as? String,
-              let width = dict["width"] as? Int else {
-            return nil
-        }
-        return Rendition(url: videoURL, width: width)
-    }
 
     func convertDictionaryToRenditions(_ dictionaries: [[String: Any]]) -> [Rendition] {
-        return dictionaries.compactMap { convertDictionaryToRendition($0) }
+        var renditionArray = [Rendition]()
+        for dict in dictionaries {
+            if let widthString = dict["qualityLabel"] as? String, let videoURL = dict["videoURL"] as? String, let width = Int(widthString) {
+                let rendition = Rendition(url: videoURL, width: width)
+                renditionArray.append(rendition)
+            }
+        }
+        return renditionArray
+    }
+
+
+
+    func retrievTimeTier(timeTier: String) -> DisplayTier {
+        switch timeTier {
+        case "Under 15 minutes":
+            return .under15Minutes
+        case "Under 30 minutes":
+            return .under30Minutes
+        case "Under 45 minutes":
+            return .under45Minutes
+        default:
+            return .under30Minutes
+        }
     }
 
 }

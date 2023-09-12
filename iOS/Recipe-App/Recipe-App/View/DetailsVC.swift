@@ -35,7 +35,7 @@ extension DetailsVC {
     func fillUIData() {
         recipeNameLabel.text = recipeDetails.name
         creditsLabel.text = getCredits()
-        countryLabel.text = recipeDetails.country?.rawValue
+        countryLabel.text = recipeDetails.country
         lastUpdatedLabel.text = String(recipeDetails.updatedAt.formattedDate())
         recipeDescriptionLabel.text = recipeDetails.description
     }

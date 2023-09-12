@@ -26,7 +26,7 @@ struct Recipes: Codable {
 struct RecipeObject: Codable {
     var id: Int
     var originalVideoURL: String?
-    var country: Country?
+    var country: String?
     var instructions: [Instruction]
     var userRatings: UserRatings
     var name: String
@@ -64,11 +64,11 @@ struct RecipeObject: Codable {
     }
 }
 
-
-enum Country: String, Codable {
-    case us = "US"
-    case zz = "ZZ"
-}
+//
+//enum Country: String, Codable {
+//    case us = "US"
+//    case zz = "ZZ"
+//}
 
 
 // MARK: - Credit
@@ -129,11 +129,9 @@ struct Tag: Codable {
 
 // MARK: - TotalTimeTier
 struct TotalTimeTier: Codable {
-    var tier: Tier?
     var displayTier: DisplayTier?
 
     enum CodingKeys: String, CodingKey {
-        case tier = "tier"
         case displayTier = "display_tier"
     }
 }
@@ -142,12 +140,6 @@ enum DisplayTier: String, Codable {
     case under15Minutes = "Under 15 minutes"
     case under30Minutes = "Under 30 minutes"
     case under45Minutes = "Under 45 minutes"
-}
-
-enum Tier: String, Codable {
-    case under15_Minutes = "under_15_minutes"
-    case under30_Minutes = "under_30_minutes"
-    case under45_Minutes = "under_45_minutes"
 }
 
 // MARK: - UserRatings
