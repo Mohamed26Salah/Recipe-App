@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct VideoQualityOption {
+struct VideoQualityOption: Equatable {
     let qualityLabel: String
     let videoURL: URL
 }

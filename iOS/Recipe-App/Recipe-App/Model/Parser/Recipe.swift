@@ -12,7 +12,7 @@ import OptionallyDecodable
 import RxDataSources
 
 // MARK: - Recipes
-struct Recipes: Codable {
+struct Recipes: Codable, Equatable {
     var count: Int
     var results: [RecipeObject]
 

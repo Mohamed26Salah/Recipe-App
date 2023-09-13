@@ -28,6 +28,15 @@
 		ABB42BB82AB0ACEB00263E41 /* RecipeDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB42BB72AB0ACEB00263E41 /* RecipeDataManager.swift */; };
 		ABB42BBB2AB0B7BB00263E41 /* Recipe+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB42BB92AB0B7BB00263E41 /* Recipe+CoreDataClass.swift */; };
 		ABB42BBC2AB0B7BB00263E41 /* Recipe+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB42BBA2AB0B7BB00263E41 /* Recipe+CoreDataProperties.swift */; };
+		ABB42BBE2AB1E09D00263E41 /* APIManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB42BBD2AB1E09D00263E41 /* APIManagerMock.swift */; };
+		ABB42BC02AB1E0B800263E41 /* RxBlocking in Frameworks */ = {isa = PBXBuildFile; productRef = ABB42BBF2AB1E0B800263E41 /* RxBlocking */; };
+		ABB42BC22AB1E0BB00263E41 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = ABB42BC12AB1E0BB00263E41 /* RxCocoa */; };
+		ABB42BC42AB1E0BE00263E41 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = ABB42BC32AB1E0BE00263E41 /* RxRelay */; };
+		ABB42BC62AB1E0C300263E41 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = ABB42BC52AB1E0C300263E41 /* RxSwift */; };
+		ABB42BC82AB1E0C900263E41 /* RxDataSources in Frameworks */ = {isa = PBXBuildFile; productRef = ABB42BC72AB1E0C900263E41 /* RxDataSources */; };
+		ABB42BCA2AB1E0DD00263E41 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = ABB42BC92AB1E0DD00263E41 /* SDWebImageSwiftUI */; };
+		ABB42BCC2AB1E34600263E41 /* RecipeViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB42BCB2AB1E34600263E41 /* RecipeViewModelTest.swift */; };
+		ABB42BCE2AB1ED5B00263E41 /* RecipeDataManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB42BCD2AB1ED5B00263E41 /* RecipeDataManagerTest.swift */; };
 		ABB587F12AACDDFC00676EEF /* UIView + Extenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB587F02AACDDFC00676EEF /* UIView + Extenstion.swift */; };
 		ABB587F92AACECA700676EEF /* UIViewController + Extenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB587F82AACECA700676EEF /* UIViewController + Extenstion.swift */; };
 		ABB587FC2AACFF9E00676EEF /* FoodDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB587FA2AACFF9E00676EEF /* FoodDetailsVC.swift */; };
@@ -108,6 +117,9 @@
 		ABB42BB72AB0ACEB00263E41 /* RecipeDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDataManager.swift; sourceTree = "<group>"; };
 		ABB42BB92AB0B7BB00263E41 /* Recipe+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Recipe+CoreDataClass.swift"; sourceTree = "<group>"; };
 		ABB42BBA2AB0B7BB00263E41 /* Recipe+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Recipe+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		ABB42BBD2AB1E09D00263E41 /* APIManagerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManagerMock.swift; sourceTree = "<group>"; };
+		ABB42BCB2AB1E34600263E41 /* RecipeViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewModelTest.swift; sourceTree = "<group>"; };
+		ABB42BCD2AB1ED5B00263E41 /* RecipeDataManagerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDataManagerTest.swift; sourceTree = "<group>"; };
 		ABB587F02AACDDFC00676EEF /* UIView + Extenstion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Extenstion.swift"; sourceTree = "<group>"; };
 		ABB587F82AACECA700676EEF /* UIViewController + Extenstion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Extenstion.swift"; sourceTree = "<group>"; };
 		ABB587FA2AACFF9E00676EEF /* FoodDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodDetailsVC.swift; sourceTree = "<group>"; };
@@ -164,7 +176,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABB42BCA2AB1E0DD00263E41 /* SDWebImageSwiftUI in Frameworks */,
+				ABB42BC22AB1E0BB00263E41 /* RxCocoa in Frameworks */,
 				AB145EAE2AAE38A400E0C82C /* RxTest-Dynamic in Frameworks */,
+				ABB42BC62AB1E0C300263E41 /* RxSwift in Frameworks */,
+				ABB42BC82AB1E0C900263E41 /* RxDataSources in Frameworks */,
+				ABB42BC42AB1E0BE00263E41 /* RxRelay in Frameworks */,
+				ABB42BC02AB1E0B800263E41 /* RxBlocking in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,6 +278,9 @@
 			isa = PBXGroup;
 			children = (
 				ABDEA5D82AAC73DC000C957A /* Recipe_AppTests.swift */,
+				ABB42BCB2AB1E34600263E41 /* RecipeViewModelTest.swift */,
+				ABB42BCD2AB1ED5B00263E41 /* RecipeDataManagerTest.swift */,
+				ABB42BBD2AB1E09D00263E41 /* APIManagerMock.swift */,
 			);
 			path = "Recipe-AppTests";
 			sourceTree = "<group>";
@@ -434,6 +455,12 @@
 			name = "Recipe-AppTests";
 			packageProductDependencies = (
 				AB145EAD2AAE38A400E0C82C /* RxTest-Dynamic */,
+				ABB42BBF2AB1E0B800263E41 /* RxBlocking */,
+				ABB42BC12AB1E0BB00263E41 /* RxCocoa */,
+				ABB42BC32AB1E0BE00263E41 /* RxRelay */,
+				ABB42BC52AB1E0C300263E41 /* RxSwift */,
+				ABB42BC72AB1E0C900263E41 /* RxDataSources */,
+				ABB42BC92AB1E0DD00263E41 /* SDWebImageSwiftUI */,
 			);
 			productName = "Recipe-AppTests";
 			productReference = ABDEA5D42AAC73DC000C957A /* Recipe-AppTests.xctest */;
@@ -580,7 +607,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABB42BCC2AB1E34600263E41 /* RecipeViewModelTest.swift in Sources */,
+				ABB42BBE2AB1E09D00263E41 /* APIManagerMock.swift in Sources */,
 				ABDEA5D92AAC73DC000C957A /* Recipe_AppTests.swift in Sources */,
+				ABB42BCE2AB1ED5B00263E41 /* RecipeDataManagerTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -985,6 +1015,36 @@
 			isa = XCSwiftPackageProductDependency;
 			package = AB6C7E992AAF4DB8000AD911 /* XCRemoteSwiftPackageReference "RxDataSources" */;
 			productName = RxDataSources;
+		};
+		ABB42BBF2AB1E0B800263E41 /* RxBlocking */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AB145EA12AAE388E00E0C82C /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxBlocking;
+		};
+		ABB42BC12AB1E0BB00263E41 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AB145EA12AAE388E00E0C82C /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		ABB42BC32AB1E0BE00263E41 /* RxRelay */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AB145EA12AAE388E00E0C82C /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxRelay;
+		};
+		ABB42BC52AB1E0C300263E41 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AB145EA12AAE388E00E0C82C /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		ABB42BC72AB1E0C900263E41 /* RxDataSources */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AB6C7E992AAF4DB8000AD911 /* XCRemoteSwiftPackageReference "RxDataSources" */;
+			productName = RxDataSources;
+		};
+		ABB42BC92AB1E0DD00263E41 /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AB6C7E962AAE587C000AD911 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
 		};
 		ABDEA5FC2AAC8B8A000C957A /* OptionallyDecodable */ = {
 			isa = XCSwiftPackageProductDependency;
