@@ -32,8 +32,6 @@ Welcome to the Recipe App project! This iOS app allows users to browse and view 
 <img src="/ScreenShotsiOS/6.png" alt="Screenshot 1" width="200">
 </div>
 
-*Caption for Screenshot 1*
-
 
 ## Installation
 
