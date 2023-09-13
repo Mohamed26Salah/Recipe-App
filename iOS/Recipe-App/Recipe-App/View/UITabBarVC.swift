@@ -8,10 +8,8 @@
 import UIKit
 
 class UITabBarVC: UITabBarController {
-
     override func viewDidLoad() {
         super.viewDidLoad()
         hideKeyboardWhenTappedAround()
     }
-    
 }

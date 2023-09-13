@@ -22,7 +22,6 @@ class FoodDetailsVC: UIViewController {
     @IBOutlet weak var detailsView: UIView!
     var recipeDetails: RecipeObject!
     var recipeVC: RecipeViewModel!
-//    let recipeVC = RecipeViewModel()
     var recipeVideoQualityList: [VideoQualityOption]!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -80,13 +79,14 @@ extension FoodDetailsVC {
         notificationCenter.post(name: NSNotification.Name("RecipeDetailsNotification"), object: recipeDetails)
     }
     func showQualitySelectionMenu() {
-        let pickerView = UIPickerView()
+        let pickerView = UIPickerView(frame: CGRect(x: 10, y: 70, width: UIScreen.main.bounds.width - 40, height: 140))
         pickerView.delegate = self
         pickerView.dataSource = self
 
         let alertController = UIAlertController(title: "Select Video Quality", message: "\n\n\n\n\n\n\n\n\n", preferredStyle: .actionSheet)
 
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        
 
         let playAction = UIAlertAction(title: "Play", style: .default) { [weak self] _ in
             guard let self = self else { return }
@@ -97,12 +97,12 @@ extension FoodDetailsVC {
 
         alertController.addAction(cancelAction)
         alertController.addAction(playAction)
-
+        
         alertController.view.addSubview(pickerView)
 
-        pickerView.translatesAutoresizingMaskIntoConstraints = false
-        pickerView.centerXAnchor.constraint(equalTo: alertController.view.centerXAnchor).isActive = true
-        pickerView.topAnchor.constraint(equalTo: alertController.view.topAnchor, constant: 20).isActive = true
+//        pickerView.translatesAutoresizingMaskIntoConstraints = false
+//        pickerView.centerXAnchor.constraint(equalTo: alertController.view.centerXAnchor).isActive = true
+//        pickerView.topAnchor.constraint(equalTo: alertController.view.topAnchor, constant: 20).isActive = true
         present(alertController, animated: true, completion: nil)
         
     }

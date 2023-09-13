@@ -16,7 +16,7 @@ typealias LocalRecipeSectionModel = AnimatableSectionModel<String, RecipeObject>
 
 class RecipeViewModel {
     let apiManager: APIClientProtocol
-    init( apiManager: APIClientProtocol = APIManager()) {
+    init(apiManager: APIClientProtocol = APIManager()) {
         self.apiManager = apiManager
     }
     private let disposeBag = DisposeBag()
@@ -38,6 +38,7 @@ class RecipeViewModel {
             "tags": tag
         ]
         self.showLoading.accept(true)
+        
         apiManager.fetchGlobal(parsingType: Recipes.self, baseURL: APIManager.EndPoint.recipeList.stringToUrl, queryParameters: queryParamters, headers: headers)
             .subscribe(
                 onNext: { recipes in
@@ -73,7 +74,6 @@ extension RecipeViewModel {
         case 8.0...10.0:
             return .green
         default:
-            // Handle any other cases (optional)
             return .black
         }
     }

@@ -124,11 +124,11 @@ class RecipeDataManager {
             )
         }
     }
-
+//MARK: - Helper Functions
+    
     func convertInstructions(_ instructions: [String]?) -> [Instruction] {
         return instructions?.map { Instruction(displayText: $0) } ?? []
     }
-
     func convertNutrition(_ nutritionLocal: NutritionLocal?) -> Nutrition {
         let protein = Int(nutritionLocal?.protein ?? 0)
         let fat = Int(nutritionLocal?.fat ?? 0)
@@ -146,8 +146,6 @@ class RecipeDataManager {
             fiber: fiber
         )
     }
-
-
     func convertSections(_ section: [String]?) -> Section {
         let components = convertStringsToItems(section ?? []) { Component(rawText: $0) }
         return Section(components: components)
@@ -175,7 +173,6 @@ class RecipeDataManager {
             ["qualityLabel":String(element.width), "videoURL":element.url]
         }
     }
-
     func convertDictionaryToRenditions(_ dictionaries: [[String: Any]]) -> [Rendition] {
         var renditionArray = [Rendition]()
         for dict in dictionaries {
@@ -186,9 +183,6 @@ class RecipeDataManager {
         }
         return renditionArray
     }
-
-
-
     func retrievTimeTier(timeTier: String) -> DisplayTier {
         switch timeTier {
         case "Under 15 minutes":

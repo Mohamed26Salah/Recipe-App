@@ -15,8 +15,9 @@ class BasicVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupBaseUI()
-        BasicVC.recipeVC.getRecipes()
         handleErrors()
+        BasicVC.recipeVC.getRecipes()
+        
     }
 }
 extension BasicVC {
