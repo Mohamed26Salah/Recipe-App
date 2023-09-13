@@ -3,6 +3,8 @@
 
 Welcome to the Recipe App project! This iOS app allows users to browse and view a collection of delicious recipes, along with their details, ingredients, preparation steps, and more. Users can also save their favorite recipes and watch recipe videos in different resolutions.
 
+<img src="/ScreenShotsiOS/1.png" alt="Screenshot 1" width="200">
+
 ## Features
 
 - View a vast collection of recipes.
@@ -22,11 +24,19 @@ Welcome to the Recipe App project! This iOS app allows users to browse and view 
 
 ## Screenshots
 
-![Screenshot 1](screenshots/screenshot1.png)
+<div style="display: flex;">
+<img src="/ScreenShotsiOS/2.png" alt="Screenshot 1" width="200">
+  *Caption for Screenshot 1*
+<img src="/ScreenShotsiOS/3.png" alt="Screenshot 1" width="200">
+  *Caption for Screenshot 1*
+<img src="/ScreenShotsiOS/4.png" alt="Screenshot 1" width="200">
+  *Caption for Screenshot 1*
+ <img src="/ScreenShotsiOS/5.png" alt="Screenshot 1" width="200">
+  *Caption for Screenshot 1*
+</div>
+
 *Caption for Screenshot 1*
 
-![Screenshot 2](screenshots/screenshot2.png)
-*Caption for Screenshot 2*
 
 ## Installation
 
@@ -65,6 +75,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Contact
 
-If you have any questions or suggestions, feel free to reach out to us at [your-email@example.com].
+For questions or feedback, feel free to contact us at [mohamedsalahomran44@gmail.com](mailto:mohamedsalahomran44@gmail.com).
 
 Happy cooking!
