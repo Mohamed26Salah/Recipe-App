@@ -26,13 +26,9 @@ Welcome to the Recipe App project! This iOS app allows users to browse and view 
 
 <div style="display: flex;">
 <img src="/ScreenShotsiOS/2.png" alt="Screenshot 1" width="200">
-  *Caption for Screenshot 1*
 <img src="/ScreenShotsiOS/3.png" alt="Screenshot 1" width="200">
-  *Caption for Screenshot 1*
 <img src="/ScreenShotsiOS/4.png" alt="Screenshot 1" width="200">
-  *Caption for Screenshot 1*
- <img src="/ScreenShotsiOS/5.png" alt="Screenshot 1" width="200">
-  *Caption for Screenshot 1*
+<img src="/ScreenShotsiOS/5.png" alt="Screenshot 1" width="200">
 </div>
 
 *Caption for Screenshot 1*
