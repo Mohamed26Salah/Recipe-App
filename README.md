@@ -1,4 +1,3 @@
-# Recipe-App-iOS-Web
 # Recipe App
 
 Welcome to the Recipe App project! This iOS app allows users to browse and view a collection of delicious recipes, along with their details, ingredients, preparation steps, and more. Users can also save their favorite recipes and watch recipe videos in different resolutions.
