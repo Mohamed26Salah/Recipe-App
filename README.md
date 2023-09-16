@@ -62,11 +62,6 @@ Contributions are welcome! If you'd like to contribute to this project, please f
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## Acknowledgments
-
-- Special thanks to [Author Name] for the inspiration and initial recipe collection.
-- Shoutout to the open-source community for the amazing tools and libraries used in this project.
-
 ## Contact
 
 For questions or feedback, feel free to contact us at [mohamedsalahomran44@gmail.com](mailto:mohamedsalahomran44@gmail.com).
