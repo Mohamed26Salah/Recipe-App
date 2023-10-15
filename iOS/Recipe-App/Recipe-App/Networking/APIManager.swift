@@ -25,18 +25,6 @@ protocol APIClientProtocol {
     ) -> Observable<T>
 }
 
-extension APIClientProtocol {
-    func fetchGlobal<T: Codable>(
-        parsingType: T.Type,
-        baseURL: URL,
-        attributes: [String]? = nil,
-        queryParameters: [String: String]? = nil,
-        jsonBody: [String: Any]? = nil,
-        headers: [String: String]? = nil
-    ) -> Observable<T> {
-        return fetchGlobal(parsingType: parsingType, baseURL: baseURL, attributes: attributes, queryParameters: queryParameters, jsonBody: nil, headers: headers)
-    }
-}
 
 class APIManager: APIClientProtocol {
     

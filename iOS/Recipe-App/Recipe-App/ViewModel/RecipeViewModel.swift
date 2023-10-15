@@ -39,7 +39,7 @@ class RecipeViewModel {
         ]
         self.showLoading.accept(true)
         
-        apiManager.fetchGlobal(parsingType: Recipes.self, baseURL: APIManager.EndPoint.recipeList.stringToUrl, queryParameters: queryParamters, headers: headers)
+        apiManager.fetchGlobal(parsingType: Recipes.self, baseURL: APIManager.EndPoint.recipeList.stringToUrl, attributes: nil, queryParameters: queryParamters, jsonBody: nil, headers: headers)
             .subscribe(
                 onNext: { recipes in
                     self.recipesModel = recipes

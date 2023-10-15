@@ -19,6 +19,9 @@ class APIManagerMock: APIClientProtocol {
     var fetchLocalFileCalled = false
     var fetchLocalFileResult: Any?
     
+    var fetchGlobalError: Error?
+    var fetchLocalFileError: Error?
+    
     func fetchGlobal<T: Codable>(
         parsingType: T.Type,
         baseURL: URL,
@@ -28,6 +31,9 @@ class APIManagerMock: APIClientProtocol {
         headers: [String: String]? = nil
     ) -> Observable<T> {
         fetchGlobalCalled = true
+        if let error = fetchGlobalError {
+            return Observable.error(error)
+        }
         return fetchGlobalResult as! Observable<T>
     }
     func fetchLocalFile<T: Codable>(

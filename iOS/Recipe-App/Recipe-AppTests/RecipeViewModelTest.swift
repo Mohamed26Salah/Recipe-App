@@ -29,49 +29,8 @@ final class RecipeViewModelTest: XCTestCase {
         apiServiceMock = nil
         sut = nil
     }
-    
-    func test_Fetch_Global() {
-        let expectedRecipeModel = Recipes(count: 20, results: [
-            RecipeObject(id: 0,
-                         instructions: [Instruction(displayText: "Test")],
-                         userRatings: UserRatings(score: 0.0),
-                         name: "Test",
-                         createdAt: 0,
-                         nutrition: Nutrition(sugar: 0),
-                         description: "Test",
-                         thumbnailURL: "Test",
-                         updatedAt: 0,
-                         renditions: [Rendition(url: "Test", width: 0)],
-                         sections: [Section(components: [Component(rawText: "Test")])],
-                         tags: [Tag(name: "Test")],
-                         credits: [Credit(name: "Test")])
-        ])
-        apiServiceMock.fetchGlobalResult = Observable.just(expectedRecipeModel)
-        
-        var actualRecipes: Recipes?
-        apiServiceMock.fetchGlobal(parsingType: Recipes.self, baseURL: APIManager.EndPoint.recipeList.stringToUrl)
-            .subscribe(onNext: { recipesModel in
-                actualRecipes = recipesModel
-            })
-            .disposed(by: disposeBag)
-        
-        XCTAssertEqual(actualRecipes, expectedRecipeModel)
-    }
-    func test_Fetch_Fails() {
-        let expectedError = NSError(domain: "TestError", code: -1, userInfo: nil)
-        apiServiceMock.fetchGlobalResult = Observable<Recipes>.error(expectedError)
-        
-        var actualError: Error?
-        apiServiceMock.fetchGlobal(parsingType: Recipes.self, baseURL: APIManager.EndPoint.recipeList.stringToUrl)
-            .subscribe(onError: { error in
-                actualError = error
-            })
-            .disposed(by: disposeBag)
-        
-        XCTAssertEqual(actualError as NSError?, expectedError)
-    }
-    func test_Get_All_Currencies_Data() {
-        let expectedRecipeModel = Recipes(count: 20, results: [
+    func test_Get_All_Recipes(){
+        let expectedRecipeModel: Recipes = Recipes(count: 1, results: [
             RecipeObject(id: 0,
                          instructions: [Instruction(displayText: "Test")],
                          userRatings: UserRatings(score: 0.0),
@@ -88,7 +47,21 @@ final class RecipeViewModelTest: XCTestCase {
         ])
         apiServiceMock.fetchGlobalResult = Observable.just(expectedRecipeModel)
         sut.getRecipes()
-        XCTAssert(apiServiceMock!.fetchGlobalCalled)
+        XCTAssertTrue(apiServiceMock.fetchGlobalCalled)
+    }
+    func test_Get_All_Recipes_Fails() {
+        let expectedError = NSError(domain: "Test", code: 1, userInfo: nil)
+        apiServiceMock.fetchGlobalError = expectedError
+        
+        let expectation = self.expectation(description: "Error emitted")
+        
+        let disposable = sut.errorSubject.subscribe(onNext: { error in
+            XCTAssertEqual(error as NSError, expectedError)
+            expectation.fulfill()
+        })
+        sut.getRecipes()
+        waitForExpectations(timeout: 5.0, handler: nil)
+        disposable.dispose()
     }
     
     func test_Extract_Names() {

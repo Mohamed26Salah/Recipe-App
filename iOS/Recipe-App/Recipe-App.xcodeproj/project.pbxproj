@@ -344,8 +344,8 @@
 		ABDEA5F82AAC79F8000C957A /* Parser */ = {
 			isa = PBXGroup;
 			children = (
-				AB6C7E922AAE3EB5000AD911 /* Recipes.swift */,
 				ABB42BB12AB0890D00263E41 /* Recipe.swift */,
+				AB6C7E922AAE3EB5000AD911 /* Recipes.swift */,
 			);
 			path = Parser;
 			sourceTree = "<group>";
@@ -792,7 +792,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.salah.12488.Recipe-App";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.salah.124888.Recipe-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -820,7 +820,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.salah.12488.Recipe-App";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.salah.124888.Recipe-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
